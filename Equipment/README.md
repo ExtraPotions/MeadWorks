@@ -21,7 +21,7 @@ New weapons, shields, trinkets, robes, wands and packs, item rarity with gems an
 | --- | --- | --- | --- |
 | Knife | Shadow Lunge | 3 s | A 6 m dash to the crosshair. The first enemy takes double damage. |
 | Sword | Skyward Thrust | 5 s | A 3 m thrust. The first enemy takes 1.5 times damage and light enemies are lifted. |
-| Axe | Cleaving Arc | 5 s | One wide horizontal swing hits every enemy once in a 180Ã‚Â° arc within 3 m, for 85% primary damage and 2Ãƒâ€” stagger. |
+| Axe | Cleaving Arc | 5 s | One wide horizontal swing hits every enemy once in a 180° arc within 3 m, for 85% primary damage and 2× stagger. |
 | Mace | Launch Slam | 6 s | The first enemy within 2 m takes 1.5 times blunt damage, is staggered and pushed back. |
 | Spear | Skewer Throw | 5 s | A thrown spear that pierces up to 3 enemies. |
 | Atgeir | Whirling Sweep | 6 s | Three sweeps around you, each at 0.6 damage. |

@@ -201,41 +201,41 @@ There are 128 mutations in eight groups, and Tough (50% more health), Fast (30% 
 - **Boss loot for every player.** When a boss dies, every player within 50 m gets a full set of its drops.
 - **Boss health line.** A wide health bar with the numbers, the stars and a chip for each aspect.
 
-The altar hover describes each aspect and its loot multiplier, with their product applied once to each player's set of the boss's own drops, including coins but excluding trophies and gems. Two aspects multiply together (Ã—1.3 and Ã—1.4 give Ã—1.82), a fraction of an item drops by chance, and a multiplied stack stops at 200.
+The altar hover describes each aspect and its loot multiplier, with their product applied once to each player's set of the boss's own drops, including coins but excluding trophies and gems. Two aspects multiply together (×1.3 and ×1.4 give ×1.82), a fraction of an item drops by chance, and a multiplied stack stops at 200.
 
 | Aspect | Loot | What it does |
 | --- | --- | --- |
-| Colossal | Ã—1.2 | 50% more health, 30% larger, moves 25% slower. |
-| Brutal | Ã—1.2 | 25% more damage, and its hits always stagger heavily. |
-| Enraged | Ã—1.2 | Below 30% health, attacks 20% faster and deals 30% more damage. |
-| Nightfall | Ã—1.3 | At night deals 20% more damage and takes 25% less. |
-| Elementalist | Ã—1.2 | Adds 20% of each hit as fire, frost, lightning or poison. |
-| Reflective | Ã—1.4 | Returns 15% of the melee damage it takes to the attacker. |
-| Shielded | Ã—1.1 | A shield worth 25% of its health, refilling after 20 s without a hit. |
-| Adaptive | Ã—1.3 | Takes 20% less from the damage type that hurt it most in the last 10 s. |
-| Fixated | Ã—1.3 | Locks onto the player who hurt it hardest for 15 s and hits that player 25% harder. |
-| Bountiful | Ã—2.0 | Doubles its own drops, including coins, except trophies and gems. |
-| Portalbound | Ã—1.2 | Portals cannot be used within 50 m of the boss while it is engaged. |
-| Phantom | Ã—1.3 | Every 20 s it vanishes for a second and blinks to a random spot within 10 m. |
-| Mending | Ã—1.3 | Below 50% health it heals 1% of its health a second for 10 s, up to 3 times. |
-| Tethered | Ã—1.2 | Players who fought it in the last 30 s and are over 30 m away lose 5% of their health each second. |
-| Summoner | Ã—1.5 | Every 30 s calls 2 minions of the local biome, up to 6 alive. |
-| Twin | Ã—1.3 | At 50% health it spawns a copy of itself with 30% of its health, once. |
-| Stormbound | Ã—1.2 | Every 12 s marks up to 2 players within 25 m, and lightning strikes that spot 1.5 s later. |
-| Gravitic | Ã—1.3 | Every 15 s a one-second pull drags players within 15 m toward it. |
-| Echoing | Ã—1.3 | Its projectile and area attacks repeat 1.5 s later at half damage. |
-| Earthshaker | Ã—1.3 | Every 18 s it stomps. Players on the ground within 8 m are knocked down for 1 s. A jump at the right moment avoids it. |
-| Sundering | Ã—1.2 | Blocking its hits costs twice the stamina and wears shields three times as fast. |
-| Draining | Ã—1.2 | Each hit it lands also drains stamina equal to half the damage dealt. |
-| Death Throes | Ã—1.1 | When it dies it glows for 2 s, then bursts within 8 m for heavy damage, at most half your maximum health, hitting players only. |
-| Bone-plated | Ã—1.2 | Takes 40% less from slash and pierce, and 40% more from blunt. |
-| Steadfast | Ã—1.4 | No single hit can take more than 5% of its health. |
-| Unshakable | Ã—1.2 | Cannot be staggered or knocked back. |
-| Devourer | Ã—1.3 | Heals 10% of its health whenever a creature dies within 15 m: its minions, your tames or your summons. |
-| Wintry | Ã—1.2 | Players within 30 m are Cold and Wet while it is engaged, unless they stand near a fire. |
-| Hexing | Ã—1.2 | Every 20 s it curses one player for 8 s: stamina regen is halved. The curse shows in the effects list. |
-| Warcaller | Ã—1.4 | Creatures within 30 m join the fight when they can see the target, deal 20% more damage and move 15% faster. |
-| Ember Trail | Ã—1.3 | Where it walks, the ground burns for 4 s, in its biome's element: fire, frost or poison. |
+| Colossal | ×1.2 | 50% more health, 30% larger, moves 25% slower. |
+| Brutal | ×1.2 | 25% more damage, and its hits always stagger heavily. |
+| Enraged | ×1.2 | Below 30% health, attacks 20% faster and deals 30% more damage. |
+| Nightfall | ×1.3 | At night deals 20% more damage and takes 25% less. |
+| Elementalist | ×1.2 | Adds 20% of each hit as fire, frost, lightning or poison. |
+| Reflective | ×1.4 | Returns 15% of the melee damage it takes to the attacker. |
+| Shielded | ×1.1 | A shield worth 25% of its health, refilling after 20 s without a hit. |
+| Adaptive | ×1.3 | Takes 20% less from the damage type that hurt it most in the last 10 s. |
+| Fixated | ×1.3 | Locks onto the player who hurt it hardest for 15 s and hits that player 25% harder. |
+| Bountiful | ×2.0 | Doubles its own drops, including coins, except trophies and gems. |
+| Portalbound | ×1.2 | Portals cannot be used within 50 m of the boss while it is engaged. |
+| Phantom | ×1.3 | Every 20 s it vanishes for a second and blinks to a random spot within 10 m. |
+| Mending | ×1.3 | Below 50% health it heals 1% of its health a second for 10 s, up to 3 times. |
+| Tethered | ×1.2 | Players who fought it in the last 30 s and are over 30 m away lose 5% of their health each second. |
+| Summoner | ×1.5 | Every 30 s calls 2 minions of the local biome, up to 6 alive. |
+| Twin | ×1.3 | At 50% health it spawns a copy of itself with 30% of its health, once. |
+| Stormbound | ×1.2 | Every 12 s marks up to 2 players within 25 m, and lightning strikes that spot 1.5 s later. |
+| Gravitic | ×1.3 | Every 15 s a one-second pull drags players within 15 m toward it. |
+| Echoing | ×1.3 | Its projectile and area attacks repeat 1.5 s later at half damage. |
+| Earthshaker | ×1.3 | Every 18 s it stomps. Players on the ground within 8 m are knocked down for 1 s. A jump at the right moment avoids it. |
+| Sundering | ×1.2 | Blocking its hits costs twice the stamina and wears shields three times as fast. |
+| Draining | ×1.2 | Each hit it lands also drains stamina equal to half the damage dealt. |
+| Death Throes | ×1.1 | When it dies it glows for 2 s, then bursts within 8 m for heavy damage, at most half your maximum health, hitting players only. |
+| Bone-plated | ×1.2 | Takes 40% less from slash and pierce, and 40% more from blunt. |
+| Steadfast | ×1.4 | No single hit can take more than 5% of its health. |
+| Unshakable | ×1.2 | Cannot be staggered or knocked back. |
+| Devourer | ×1.3 | Heals 10% of its health whenever a creature dies within 15 m: its minions, your tames or your summons. |
+| Wintry | ×1.2 | Players within 30 m are Cold and Wet while it is engaged, unless they stand near a fire. |
+| Hexing | ×1.2 | Every 20 s it curses one player for 8 s: stamina regen is halved. The curse shows in the effects list. |
+| Warcaller | ×1.4 | Creatures within 30 m join the fight when they can see the target, deal 20% more damage and move 15% faster. |
+| Ember Trail | ×1.3 | Where it walks, the ground burns for 4 s, in its biome's element: fire, frost or poison. |
 
 ### New creatures
 Thirteen creatures join the world. Each has a spawn switch under Advanced, and all thirteen are on by default. In crypts they join the skeleton and draugr spawners at low weight. Most carry a look of their own: props from the game's meshes, a larger or different held weapon, and a glow color. Drops marked Equipment, and the trophies, need Equipment installed.
