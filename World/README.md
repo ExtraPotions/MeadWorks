@@ -1,6 +1,6 @@
 # MeadWorks World
 
-Seasons and weather, new looks for each season, beds and altars, and smoother play on servers. Configure the module on the World page of the MeadWorks menu (F8). Needs Meadworks: Core at exactly the same version.
+Four seasons with changing landscapes and growth, biome weather and forecasts, flexible bed use, raid timing and server settings. Configure the module on the World page of the MeadWorks menu (F8). Needs Meadworks: Core at exactly the same version.
 
 ![Gentle rain](https://raw.githubusercontent.com/ExtraPotions/MeadWorks/main/assets/World/02-gentle-rain.png)
 ![Thunderstorm](https://raw.githubusercontent.com/ExtraPotions/MeadWorks/main/assets/World/03-thunderstorm.png)
@@ -12,9 +12,9 @@ Seasons and weather, new looks for each season, beds and altars, and smoother pl
 ## What it does
 
 ### Seasons
-The world moves through Spring, Summer, Fall and Winter. The season comes from the world day, so every player sees the same one. Days per season is 10 by default, and Start season sets the season of the first day. With Season changes on sleep on, a new season begins only once the night has been slept through. Season override holds the world in one season. The line under the minimap's biome ends with the season and, by your choice, the days left, the day of the season, days and hours, a countdown or nothing, such as "Day 36 Â· 15:45 Â· Winter, 4 days left". When that would make the line wider than the minimap, the season gets its own line.
+The world moves through Spring, Summer, Fall and Winter. The season comes from the world day, so every player sees the same one. The world loading screen also names the season. Days per season is 10 by default, and Start season sets the season of the first day. With Season changes on sleep on, a new season begins only once the night has been slept through. Season override holds the world in one season. The line under the minimap's biome ends with the season and, by your choice, the days left, the day of the season, days and hours, a countdown or nothing, such as "Day 36 Â· 15:45 Â· Winter, 4 days left". When that would make the line wider than the minimap, the season gets its own line.
 
-- **Winter cold.** In winter you are Cold outdoors, and Freezing at night. Fires, shelter and resistances work as in the game, and a lit torch from Equipment still keeps the cold off. It does not apply indoors, in dungeons or in the Ashlands.
+- **Winter cold.** Winter adds Cold during the day and Freezing at night outside dungeon interiors and the Ashlands. The game still accounts for shelter, fires and resistance, and Equipment can add warmth from a held lit torch.
 - **New season notice.** The first morning of a new season shows one center message, such as "Summer begins". Joining an existing season or holding a Season override does not announce it again.
 - **Crop growth.** Crops take 1.0 times as long to grow in spring, 0.8 in summer, 1.0 in fall and 2.0 in winter. Winter slows growth without stopping it. The four multipliers are Advanced settings.
 
@@ -89,42 +89,42 @@ While a MeadWorks weather is on where you stand, a panel left of the minimap sho
 - **Dead Calm** halves the sail force of ships under sail; rowing is unchanged.
 - **Gale** slows you by 10% and gives ships under sail 25% more sail force.
 
-Weather effects are limited to the listed biomes. Damage ticks apply outdoors without shelter; armor and resistances still apply. Severe weather gives three minutes of warning and does not start during a nearby boss fight. Fimbulwinter is the Deep North's background weather when no other local MeadWorks weather is active.
+Weather effects are limited to the listed biomes. Damage ticks apply outdoors without shelter; armor and resistances still apply. Severe weather gives three minutes of warning and does not start during a nearby boss fight. Fimbulwinter is the Deep North's background weather when no other local MeadWorks weather is active. Where a weather eases cold one step, the host decides that ease from the weather it scheduled, and joined clients use the host's decision. On a server without MeadWorks, cold stays the game's own.
 
 | Weather | Biomes | Effects |
 | --- | --- | --- |
 | Heatwave | Meadows, Plains | Hot in the open: stamina regeneration -20%, no Cold or Freezing. Shade, shelter or Wet clears Hot; Wet dries twice as fast outdoors. Bleached sunlight, warm haze and heat shimmer. |
-| Dust Storm | Plains, Mountain | Move speed -10%, running stamina cost +10%, dense fog. |
+| Dust Storm | Plains, Mountain | Move speed -10%, running stamina cost +10%, dense fog: enemies cannot see you beyond 15 m. |
 | Hailstorm | Meadows, Black Forest, Mountain | 3 blunt damage every 5 s. |
-| Fog Bank | Swamp, Black Forest | Dense gray fog, movement noise -40%. |
-| Blizzard | Mountain, Deep North | Cold outdoors, dense fog. |
+| Fog Bank | Swamp, Black Forest | Dense gray fog: enemies cannot see you beyond 25 m; movement noise -40%. |
+| Blizzard | Mountain, Deep North | Cold outdoors and Freezing at night, dense fog: enemies cannot see you beyond 10 m. |
 | Monsoon | Swamp, Meadows | Stamina regeneration -10%. |
-| Aurora Night | Mountain, Deep North, Meadows | Suppresses Cold, Rested duration +25%. |
+| Aurora Night | Mountain, Deep North, Meadows | Eases cold one step (Freezing becomes Cold, Cold goes away), Rested duration +25%. |
 | Ember Storm | Ashlands | 4 fire damage every second. |
-| Spore Drift | Swamp, Mistlands | 1 poison damage every 2 s, plant growth time halved. |
+| Spore Drift | Swamp, Mistlands | 1 poison damage every 2 s, crops grow and picked wild plants regrow twice as fast. |
 | Gale | Meadows, Plains, Ocean | Move speed -10%, sail force +25%. |
 | Deep Snow | Deep North | Move speed -18%, running stamina cost +15%. |
 | Helbreath | Deep North | Freezing outdoors, 2 frost damage every second. |
-| Fimbulwinter | Deep North | Freezing outdoors, stamina regeneration -25%, 3 frost damage every 5 s. |
-| Hoarfrost Fog | Deep North, Mountain | Cold outdoors, dense fog. |
+| Fimbulwinter | Deep North | With Weather effects on: Freezing outdoors, stamina regeneration -25%, 3 frost damage every 5 s. |
+| Hoarfrost Fog | Deep North, Mountain | Cold outdoors, dense fog: enemies cannot see you beyond 20 m. |
 | Glimmerfrost | Deep North, Mountain | Stamina regeneration +10%, movement noise +15%. |
-| Morning Dew | Meadows | Plant growth speed +10%, movement noise -10%. |
-| Thunderstorm | Meadows, Black Forest, Swamp | 25 lightning damage every 20 s; Wet raises lightning damage by 50%. |
-| Gloomfall | Black Forest | Dark forest fog. |
+| Morning Dew | Meadows | Crops grow and picked wild plants regrow 10% faster, movement noise -10%. |
+| Thunderstorm | Meadows, Black Forest, Swamp | 13 lightning damage every 20 s; Wet raises lightning damage by 50%. |
+| Gloomfall | Black Forest | Dark forest fog: enemies cannot see you beyond 35 m. |
 | Bog Surge | Swamp | Move speed -15%. |
 | Rimesleet | Mountain | Cold outdoors and Freezing at night. |
 | Prairie Fire | Plains | 3 fire damage every 3 s. |
-| Arcmist | Mistlands | 8 lightning damage every 20 s; Wet raises lightning damage by 50%. |
-| Ashfall | Ashlands | Stamina regeneration -10%, dense fog, movement noise -20%. |
+| Arcmist | Mistlands | 25 lightning damage every 20 s; Wet raises lightning damage by 50%. |
+| Ashfall | Ashlands | Stamina regeneration -10%, dense fog: enemies cannot see you beyond 30 m; movement noise -20%. |
 | Brimstone Rain | Ashlands | 5 fire damage every 3 s. |
 | Dead Calm | Ocean | Sail force halved; rowing is unchanged. |
 | Rogue Swell | Ocean | Running stamina cost doubled. |
-| Gentle Rain | Meadows, Black Forest | Plant growth speed +50%. |
+| Gentle Rain | Meadows, Black Forest | Crops grow and picked wild plants regrow 50% faster. |
 | Fishing Wind | Ocean, Meadows | Halves the wandering wait before fish approach a nearby float. |
 | Brisk Air | Plains, Mountain | Stamina regeneration +25%, move speed +10%. |
 | Clear Skies | Meadows, Plains | Rested duration +50%. |
 | Rich Fog | Swamp, Black Forest | One extra item per pickable harvest, including crops. |
-| Northerly Calm | Deep North | Suppresses Cold, stamina regeneration +20%. |
+| Northerly Calm | Deep North | Eases cold one step (Freezing becomes Cold, Cold goes away), stamina regeneration +20%. |
 | Fair Sailing | Ocean | Sail force +25%. |
 | Eitr Mist | Mistlands | Eitr regeneration +40%. |
 
@@ -133,6 +133,8 @@ Weather effects are limited to the listed biomes. Damage ticks apply outdoors wi
 - **Dry Wet near torches.** Lit player-built standing torches, wall sconces and braziers dry Wet at the campfire rate within the native campfire heat radius. Multiple fires do not stack the drying rate.
 - **Sleep without setting spawn.** Use an unclaimed bed, another player's bed, or your own old bed to sleep without changing ownership or your spawn point. Hold the game's alternate-use binding while using an unclaimed or your own bed to claim it or set spawn normally, including on gamepad. Hover text distinguishes Sleep (spawn unchanged), Claim, and Set spawn. Daytime use never silently claims a bed. Native time, enemies, shelter, fire, and Wet checks still apply.
 - **Players in bed to skip night (%).** The server chooses 1 to 100%, default 100% (native behavior). The count rounds up: 50% of three connected players needs two in bed. A center line shows `2 of 3 in bed`. Below 100%, players outside beds stay awake; if players leave bed or join and the threshold is no longer met during a skip, the skip stops at its current time. A canceled skip does not settle Season changes on sleep.
+- **Claim beds without a roof.** Alternate use can claim a bed or set your spawn point without a roof. Sleeping still requires shelter.
+- **Nearby bed respawn.** If you die within 128 m of your saved bed spawn, the initial wait to respawn there is capped at two seconds. The game still checks and loads the spawn point.
 - **Status effects across logout.** Rested, Wet, and poison keep their remaining duration in character data, including across worlds. Poison also keeps its remaining damage and tick timer. Offline time does not run these timers. Existing effects are not stacked or refreshed. Death clears the saved effects.
 - **Sleep near torches.** A sheltered bed can use a nearby lit, player-built standing torch, wall torch or brazier as its fire, including colored and iron variants. The range matches the campfire's heat radius. This is always on; torches gain no warmth or comfort, and all other sleep requirements still apply.
 - **Altar offerings from inventory.** A boss altar takes its offering straight from your inventory when you use it.
@@ -158,11 +160,15 @@ Weather effects are limited to the listed biomes. Damage ticks apply outdoors wi
 | Seeker | Stamina regeneration +7% |
 
 ### Smoother play on servers
-On a server you have joined, far-away things unload 25 at a time so the game does not stutter. It does nothing for a solo player or the host, and there is no setting for it.
+On a server you have joined, objects that leave your active area disappear from play immediately and finish unloading in batches of up to 25 per frame. The queue clears at once behind a loading screen. Solo games and the host use the game’s usual unload schedule.
 
-These are off unless noted, and they are Advanced.
+Reduce distant player cloth is on by default. It reduces cloth simulation and offscreen animation for distant, idle players. Player limit starts at 10 and can be raised to 64 on Steam after restarting the world. Crossplay keeps its native limit of 10.
+
+These Advanced settings are off unless noted.
 
 - **Release objects of disconnected players** (on): when a player leaves, the creatures, boats, carts and open chests their game was running are freed at once, so nothing stays frozen or stuck.
+- **Keep recent terrain loaded**: briefly retains up to four areas after death or a long visit. Pieces and creatures use their usual unload range.
+- **Arrival object budget (ms)**: spreads object creation during a loading screen or teleport across updates. 0 keeps the game’s usual schedule.
 - **Prioritize ZDO updates per player**: the server sends each player the changes that matter most to them first.
 - **Filter dungeon layer updates**: the server sends players outside a dungeon less about what is inside it, and players inside less about what is outside.
 - **Raise Steam send rate and queue headroom**: lets the game send more data each second, for smoother play with many players or large bases.
@@ -212,65 +218,65 @@ Troll raid creatures, including troll variants, require Bonemass to be defeated 
 
 ## Settings
 
-Press F8 and open the World page. Every setting row has a hover tip describing its effect. A setting marked Advanced is under the Advanced row of the page. Server controlled settings use server values for clients; solo players, the host and admins can change them. Personal settings affect your own game. No rows on this page use an optional server lock.
+Press F8 and open the World page. Every setting row has a hover tip describing its effect. A setting marked Advanced is under the Advanced row of the page. MeadWorks syncs settings. The host or an authorized admin can set most rows to Admins or Everyone in game. Rows that control the world use a shared value under either permission. Display and local performance rows use each player’s own value under Everyone and the server value under Admins. Rows marked Admins only are reserved for the host and authorized admins. Solo players can edit every row.
 
-| Name | Default | Policy | What it does |
+| Name | Default | Default permission | What it does |
 | --- | --- | --- | --- |
-| Seasons | On | Server controlled | The world moves through spring, summer, fall and winter. |
-| Days per season | 10 | Server controlled | How long a season lasts, in in-game days (1 to 60). |
-| Start season | Spring | Server controlled | The season the world's first day falls in. Advanced. |
-| Season changes on sleep | Off | Server controlled | A new season begins only once the night has been slept through. |
-| Season override | Off | Server controlled | Holds the world in one season. Off lets the seasons run. Advanced. |
-| Season time left | Day of season | Personal | How the time left in the season is written: days left, day of the season, days and hours, a countdown, or not at all. Advanced. |
-| Winter cold | On | Server controlled | In winter you are cold outdoors unless a fire, shelter or warm gear keeps you warm. |
-| Season crop growth | On | Server controlled | Crops grow faster or slower with the season, taking twice as long in winter by default. |
-| Spring growth time | 1 | Server controlled | Multiplies how long crops take to grow in spring. 1 is the game's own time (0.25 to 3). Advanced. |
-| Summer growth time | 0.8 | Server controlled | The same for summer. Advanced. |
-| Fall growth time | 1 | Server controlled | The same for fall. Advanced. |
-| Winter growth | 2 | Server controlled | The same for winter: crops take twice as long by default (0.25 to 3). Advanced. |
-| Seasonal modifiers | On | Server controlled | The season changes production, harvests, fuel use, weather, raids, trader stock and daylight. |
-| Season production speed | empty | Server controlled | Overrides crop, station, and honey rates by season; empty uses the built-in profile. Advanced. |
-| Season harvest yield | empty | Server controlled | How much pickables give, as Season=multiplier pairs. Advanced. |
-| Season fuel burn rate | empty | Server controlled | Overrides built-in fuel burn rates by season. Advanced. |
-| Season weather weights | empty | Server controlled | Makes kinds of weather more or less likely in a season, as pairs such as Winter=Snow:3. Advanced. |
-| Season raid chance | empty | Server controlled | Overrides built-in raid chance by season. Advanced. |
-| Season raid events | empty | Server controlled | Which raids can come in each season, as Season=name\|name entries. -name removes a raid. Advanced. |
-| Season trader stock | empty | Server controlled | What traders sell in each season, as Season=item:price entries. -item removes an item. Advanced. |
-| Season night ratio | empty | Server controlled | How long nights are in each season, as Season=number pairs. Above 1 is longer, below 1 shorter, 0.5 at the least. Advanced. |
-| Season light brightness | empty | Server controlled | How bright each season is, as Season=number pairs. 1 is normal. Advanced. |
-| Season light tint | empty | Server controlled | The color of the light in each season, as Season=RRGGBB pairs. Advanced. |
-| Season preset | Built-in | Server controlled | The name of the season preset file in use. Built-in keeps the values on this page. Advanced. |
-| Season preset data (synced) | empty | Server controlled | The season preset the server sends to its players. The server fills it in; leave it as it is. Advanced. |
-| Seasonal tint | On | Personal | Tints the world in the colors of the season. Spring shows fresh grass, summer a haze, and winter snow and icy water. Advanced. |
-| Weather effects | On | Server controlled | Adds seasonal weather per occupied biome and a forecast in the weather panel and minimap line. |
-| Weather frequency | 0.5 | Server controlled | Multiplies how often that weather comes (0.25 to 3). Advanced. |
-| Raid banner | On | Personal | Shows a raid's name and the time left under the compass. |
-| Sleep without setting spawn | On | Server controlled | Sleep in any bed without changing spawn; alternate use claims or sets spawn. |
-| Players in bed to skip night (%) | 100 | Server controlled | Percent of connected players needed, rounded up (1 to 100). |
-| Claim beds without a roof | On | Server controlled | Claiming a bed sets your spawn point without shelter, while sleeping still needs shelter. Advanced. |
-| Trophy auras | On | Server controlled | A trophy on an item stand gives a small bonus to players near it. |
-| Trophy aura radius | 10 | Server controlled | How near a trophy you must be for its bonus, in meters (1 to 30). Advanced. |
-| Player limit | 10 | Server controlled | Maximum players after the next world start, from 1 to 64 (crossplay keeps its native limit of 10). |
-| Reduce distant player cloth | On | Personal | Reduces cloth simulation and offscreen animation for idle players more than 60 meters away while keeping full animation nearby and during attacks. |
-| Release objects of disconnected players | On | Server controlled | When a player leaves, the creatures, boats, carts and open chests their game was running are freed at once. Advanced. |
-| Keep recent terrain loaded | Off | Personal | Keeps terrain from up to four long visits or recent deaths loaded briefly while pieces and creatures still unload at their usual range. Advanced. |
-| Arrival object budget (ms) | Native (0) | Personal | Targets this many milliseconds of object creation per scene update during loading screens and teleports (0 to 8; 0 keeps the native schedule). Advanced. |
-| Prioritize ZDO updates per player | Off | Server controlled | The server sends each player the changes that matter most to them first. Advanced. |
-| ZDO maximum priority wait (seconds) | 5 | Server controlled | After this many seconds unsent, a change moves up the queue (1 to 30). Advanced. |
-| ZDO priority distance boost (meters) | 100 | Server controlled | How much closer things count as when they are in a fight, just changed or matter to a player, so they are sent sooner (0 to 500). Advanced. |
-| Filter dungeon layer updates | Off | Server controlled | The server sends players outside a dungeon less about what is inside it, and players inside less about what is outside. Advanced. |
-| Always sync prefabs | `Player,Player_tombstone,Raft,Karve,VikingShip,VikingShip_Ashlands,Cart,portal,portal_wood,portal_stone,LocationProxy,dungeon_forestcrypt_door,dungeon_sunkencrypt_irongate,dungeon_queen_door,sunken_crypt_gate` | Server controlled | Things that are always sent to every player, as a list of names with commas between them. Advanced. |
-| Layer height margin (meters) | 100 | Server controlled | How far past the line between the world and its dungeons something must be before it is held back (0 to 500). Advanced. |
-| Layer transition grace (seconds) | 10 | Server controlled | How long everything is still sent after a player goes in or out of a dungeon (2 to 30). Advanced. |
-| Other layer maximum deferral (seconds) | 5 | Server controlled | The longest an update from the other level is held back (1 to 30). Advanced. |
-| Raise Steam send rate and queue headroom | Off | Personal | Lets the game send more data to other players each second, for smoother play with many players or large bases. Advanced. |
-| Steam send rate min (bytes/s) | 153600 | Personal | The lowest rate the game sends at (10240 to 16777216). Advanced. |
-| Steam send rate max (bytes/s) | 153600 | Personal | The highest rate the game sends at (10240 to 16777216). Advanced. |
-| Steam send buffer size (bytes) | 524288 | Personal | How much data may wait to be sent (2048 to 4194304). Advanced. |
-| ZDO queue headroom per peer (bytes) | 10240 | Server controlled | How much data may wait for one player before more is held back (2048 to 1048576). Advanced. |
-| Negotiated Steam compression | Off | Personal | Compresses what is sent between players whose games both have it on. Advanced. |
-| Compression threshold (bytes) | 256 | Personal | Only messages larger than this are compressed (64 to 65536). Advanced. |
-| Coalesce tiny movement updates | Off | Server controlled | Leaves out very small movements until they add up, to save data. Advanced. |
+| Seasons | On | Admins | The world moves through spring, summer, fall and winter. |
+| Days per season | 10 | Admins | How long a season lasts, in in-game days (1 to 60). |
+| Start season | Spring | Admins | The season the world's first day falls in. Advanced. |
+| Season changes on sleep | Off | Admins | A new season begins only once the night has been slept through. |
+| Season override | Off | Admins | Holds the world in one season. Off lets the seasons run. Advanced. |
+| Season time left | Day of season | Everyone | How the time left in the season is written: days left, day of the season, days and hours, a countdown, or not at all. Advanced. |
+| Winter cold | On | Admins | In winter you are cold outdoors unless a fire, shelter or warm gear keeps you warm. |
+| Season crop growth | On | Admins | Crops grow faster or slower with the season, taking twice as long in winter by default. |
+| Spring growth time | 1 | Admins | Multiplies how long crops take to grow in spring. 1 is the game's own time (0.25 to 3). Advanced. |
+| Summer growth time | 0.8 | Admins | The same for summer. Advanced. |
+| Fall growth time | 1 | Admins | The same for fall. Advanced. |
+| Winter growth | 2 | Admins | The same for winter: crops take twice as long by default (0.25 to 3). Advanced. |
+| Seasonal modifiers | On | Admins | The season changes production, harvests, fuel use, weather, raids, trader stock and daylight. |
+| Season production speed | empty | Admins | Overrides crop, station, and honey rates by season; empty uses the built-in profile. Advanced. |
+| Season harvest yield | empty | Admins | How much pickables give, as Season=multiplier pairs. Advanced. |
+| Season fuel burn rate | empty | Admins | Overrides built-in fuel burn rates by season. Advanced. |
+| Season weather weights | empty | Admins | Makes kinds of weather more or less likely in a season, as pairs such as Winter=Snow:3. Advanced. |
+| Season raid chance | empty | Admins | Overrides built-in raid chance by season. Advanced. |
+| Season raid events | empty | Admins | Which raids can come in each season, as Season=name\|name entries. -name removes a raid. Advanced. |
+| Season trader stock | empty | Admins | What traders sell in each season, as Season=item:price entries. -item removes an item. Advanced. |
+| Season night ratio | empty | Admins | How long nights are in each season, as Season=number pairs. Above 1 is longer, below 1 shorter, 0.5 at the least. Advanced. |
+| Season light brightness | empty | Admins | How bright each season is, as Season=number pairs. 1 is normal. Advanced. |
+| Season light tint | empty | Admins | The color of the light in each season, as Season=RRGGBB pairs. Advanced. |
+| Season preset | Built-in | Admins | The name of the season preset file in use. Built-in keeps the values on this page. Advanced. |
+| Season preset data (synced) | empty | Admins | The season preset the server sends to its players. The server fills it in; leave it as it is. Advanced. |
+| Seasonal tint | On | Everyone | Tints the world in the colors of the season. Spring shows fresh grass, summer a haze, and winter snow and icy water. Advanced. |
+| Weather effects | On | Admins | Adds seasonal weather per occupied biome and a forecast in the weather panel and minimap line. |
+| Weather frequency | 0.5 | Admins | Multiplies how often that weather comes (0.25 to 3). Advanced. |
+| Raid banner | On | Everyone | Shows a raid's name and the time left under the compass. |
+| Sleep without setting spawn | On | Admins only | Sleep in any bed without changing spawn; alternate use claims or sets spawn. |
+| Players in bed to skip night (%) | 100 | Admins only | Percent of connected players needed, rounded up (1 to 100). |
+| Claim beds without a roof | On | Admins | Claiming a bed sets your spawn point without shelter, while sleeping still needs shelter. Advanced. |
+| Trophy auras | On | Admins | A trophy on an item stand gives a small bonus to players near it. |
+| Trophy aura radius | 10 | Admins | How near a trophy you must be for its bonus, in meters (1 to 30). Advanced. |
+| Player limit | 10 | Admins only | Maximum players after the next world start, from 1 to 64 (crossplay keeps its native limit of 10). |
+| Reduce distant player cloth | On | Everyone | Reduces cloth simulation and offscreen animation for idle players more than 60 meters away while keeping full animation nearby and during attacks. |
+| Release objects of disconnected players | On | Admins only | When a player leaves, the creatures, boats, carts and open chests their game was running are freed at once. Advanced. |
+| Keep recent terrain loaded | Off | Everyone | Keeps terrain from up to four long visits or recent deaths loaded briefly while pieces and creatures still unload at their usual range. Advanced. |
+| Arrival object budget (ms) | Native (0) | Everyone | Targets this many milliseconds of object creation per scene update during loading screens and teleports (0 to 8; 0 keeps the native schedule). Advanced. |
+| Prioritize ZDO updates per player | Off | Admins | The server sends each player the changes that matter most to them first. Advanced. |
+| ZDO maximum priority wait (seconds) | 5 | Admins | After this many seconds unsent, a change moves up the queue (1 to 30). Advanced. |
+| ZDO priority distance boost (meters) | 100 | Admins | How much closer things count as when they are in a fight, just changed or matter to a player, so they are sent sooner (0 to 500). Advanced. |
+| Filter dungeon layer updates | Off | Admins | The server sends players outside a dungeon less about what is inside it, and players inside less about what is outside. Advanced. |
+| Always sync prefabs | `Player,Player_tombstone,Raft,Karve,VikingShip,VikingShip_Ashlands,Cart,portal,portal_wood,portal_stone,LocationProxy,dungeon_forestcrypt_door,dungeon_sunkencrypt_irongate,dungeon_queen_door,sunken_crypt_gate` | Admins | Things that are always sent to every player, as a list of names with commas between them. Advanced. |
+| Layer height margin (meters) | 100 | Admins | How far past the line between the world and its dungeons something must be before it is held back (0 to 500). Advanced. |
+| Layer transition grace (seconds) | 10 | Admins | How long everything is still sent after a player goes in or out of a dungeon (2 to 30). Advanced. |
+| Other layer maximum deferral (seconds) | 5 | Admins | The longest an update from the other level is held back (1 to 30). Advanced. |
+| Raise Steam send rate and queue headroom | Off | Everyone | Lets the game send more data to other players each second, for smoother play with many players or large bases. Advanced. |
+| Steam send rate min (bytes/s) | 153600 | Everyone | The lowest rate the game sends at (10240 to 16777216). Advanced. |
+| Steam send rate max (bytes/s) | 153600 | Everyone | The highest rate the game sends at (10240 to 16777216). Advanced. |
+| Steam send buffer size (bytes) | 524288 | Everyone | How much data may wait to be sent (2048 to 4194304). Advanced. |
+| ZDO queue headroom per peer (bytes) | 10240 | Admins | How much data may wait for one player before more is held back (2048 to 1048576). Advanced. |
+| Negotiated Steam compression | Off | Everyone | Compresses what is sent between players whose games both have it on. Advanced. |
+| Compression threshold (bytes) | 256 | Everyone | Only messages larger than this are compressed (64 to 65536). Advanced. |
+| Coalesce tiny movement updates | Off | Admins | Leaves out very small movements until they add up, to save data. Advanced. |
 
 ## Known limits
 

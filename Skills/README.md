@@ -34,13 +34,13 @@ A tool that both chops and mines gets the larger of its two bonuses, never both.
 ### Saved with the character
 - **Attunements.** Your attunements are saved in the character file, so they follow it to any world or server. An earned power is attuned by default. When you go over the limit, the one attuned first is released, and switching a power off and on again makes it the newest.
 - **Mastery.** Each power's kill count is saved on the character too, with a receipt for each counted boss death, so one death never counts twice.
-- **On a server.** The server checks boss kill credit and controls the attune limit. A stricter server limit releases the oldest excess attunements; earned mastery remains, and you can attune those powers again when the limit allows it. Passive Forsaken powers is a personal switch.
+- **On a server.** The server checks boss kill credit and controls the attune limit. A stricter server limit releases the oldest excess attunements; earned mastery remains, and you can attune those powers again when the limit allows it. Passive Forsaken powers starts at Everyone.
 
 ### Existing characters
 The first time Skills loads a character, a Forsaken power it already holds from the game counts as earned at level 1. Each defeat after that adds one level. Earlier kills are not counted back from the game's statistics. A power you had switched off under the old passive settings starts unattuned on each character.
 
 ### Admin
-Grant all, for a solo player, the host or an admin, gives your own character every boss power and leaves mastery you already earned in place. Reset progression clears that character's mastery counts, attunement choices and kill receipts, and it asks first. Both leave the game's own powers and the world's boss progress alone. There is no per-boss give or reset.
+Grant all, for a solo player, the host or an admin, gives your own character every boss power and leaves mastery you already earned in place. Reset progression clears that character's mastery counts, attunement choices and kill receipts, and it asks first. Both are disabled for non-admin clients and leave the game's own powers and the world's boss progress alone. There is no per-boss give or reset.
 
 ### Skill gains
 With Show skill gains on, a skill that reaches a new level adds one row to the pickup feed: the skill, the progress that filled the level, and the percent left to the next level. The row keeps adding while that skill levels again before it fades. Experience that stays inside the same level is quiet. The game's own level-up message still appears. The row reads the skill after the game has applied the gain, so a skill raised on the way to something else is included. The rows show while Pickups and skill gains is on.
@@ -59,49 +59,49 @@ The Inventory skills key opens the inventory on the Achievements tab. It has no 
 
 ## Vitals
 
-The Vitals section of the Skills page changes how fast stamina and eitr come back, what actions spend, what food gives, and the health and stamina you have before food. Every slider starts on the game's own number. Leaving it there changes nothing. The server sets these for everyone; a solo player and the host still choose their own.
+The Vitals section of the Skills page changes how fast stamina and eitr come back, what actions spend, what food gives, and the health and stamina you have before food. Every slider starts on the game's own number. Leaving it there changes nothing. They start at Admins, so on a server the server's values apply to everyone; a solo player and the host still choose their own.
 
 ## Settings
 
-Press F8 and open the Skills page. Every setting row has a hover tip describing its effect. A setting marked Advanced is under the Advanced row of the page. The Vitals rows sit together in the Vitals section.
+Press F8 and open the Skills page. Every setting row has a hover tip describing its effect. A setting marked Advanced is under the Advanced row of the page. The Vitals rows sit together in the Vitals section. The last column is the permission a setting starts with; the host or an admin can change it in game (see MeadWorks Core). Admins settings take the server's value for every player. Solo players, hosts and admins can edit every setting.
 
-| Name | Default | Policy | What it does |
+| Name | Default | Who can change | What it does |
 | --- | --- | --- | --- |
-| Passive Forsaken powers | On | Personal | The Forsaken powers you have attuned work all the time, with the mastery bonuses you have earned. |
-| Kill credit range | 50 | Server controlled | How near you must be when a boss dies to be counted in the kill, in meters (10 to 200). Advanced. |
-| Attuned power limit | 3 | Server controlled | How many passive powers can be active at once (0 to 9; 0 is no limit). Advanced. |
-| Grant all | Grant | Solo / host / admin action | Gives your character every boss power. Mastery you earned stays. Solo players, hosts and admins can use it. |
-| Reset progression | Reset | Solo / host / admin action | Clears this character's boss mastery, attunement and kill receipts after you confirm. Solo players, hosts and admins can use it. |
-| Passive powers HUD | On | Personal | Lists your passive powers among your effects on the HUD. |
-| Show skill gains | On | Personal | Shows a row when a skill reaches a new level. The game's level-up message stays. |
-| Catch up | On | Server controlled | A skill below its highest level trains twice as fast until it is back there. Death still takes the game's own share. |
-| Progressive powers | On | Server controlled | A Forsaken power grows with every boss defeated beyond the one that grants it. |
-| Effect per boss, % | 10 | Server controlled | How much stronger a power's effect gets for each further boss, in percent (0 to 50). Advanced. |
-| Duration per boss, % | 10 | Server controlled | How much longer a power lasts for each further boss, in percent (0 to 50). Advanced. |
-| Cooldown cut per boss, % | 5 | Server controlled | How much shorter a power's cooldown gets for each further boss, in percent (0 to 20). Advanced. |
-| Inventory skills key | None | Personal | Opens the inventory on its Achievements tab. |
-| Skills tabs in the inventory | On | Personal | Adds the Achievements, Trophies and Texts tabs to the inventory. |
-| Stamina regen | 1 | Server controlled | How fast stamina comes back, times the game's rate (0 to 3). Advanced. |
-| Regen delay | 1 | Server controlled | How long stamina and eitr wait before they start coming back, times the game's wait (0 to 3). Advanced. |
-| Eitr regen | 1 | Server controlled | How fast eitr comes back, times the game's rate (0 to 3). Advanced. |
-| Run stamina | 1 | Server controlled | How much stamina running spends, times the game's cost (0 to 3). Advanced. |
-| Jump stamina | 1 | Server controlled | How much stamina jumping spends, times the game's cost (0 to 3). Advanced. |
-| Dodge stamina | 1 | Server controlled | How much stamina dodging spends, times the game's cost (0 to 3). Advanced. |
-| Swim stamina | 1 | Server controlled | How much stamina swimming spends, times the game's cost (0 to 3). Advanced. |
-| Sneak stamina | 1 | Server controlled | How much stamina sneaking spends, times the game's cost (0 to 3). Advanced. |
-| Block stamina | 1 | Server controlled | How much stamina blocking spends, times the game's cost (0 to 3). Advanced. |
-| Base health | 25 | Server controlled | Health before food, in health points (1 to 200). The slider rests on the game's own base. Advanced. |
-| Base stamina | Native player base (50 in the current game) | Server controlled | Stamina before food, in stamina points (1 to 300). The slider rests on the game's own base. Advanced. |
-| Attack stamina | 1 | Server controlled | How much stamina a weapon attack spends, times the game's cost (0 to 3). Advanced. |
-| Tool stamina | 1 | Server controlled | Multiplies stamina spent on building and attacks marked as home items by the game, such as hammer or hoe work (0 to 3). Advanced. |
-| Food health | 1 | Server controlled | Food health multiplier (0.05 to 3). Advanced. |
-| Food stamina | 1 | Server controlled | Food stamina multiplier (0 to 3). Advanced. |
-| Food eitr | 1 | Server controlled | Food eitr multiplier (0 to 3). Advanced. |
-| Food duration | 1 | Server controlled | How long a food lasts, times the game's time (0.05 to 3). Advanced. |
-| Eat again | 0.5 | Server controlled | The share of a food's time still left at which it can be eaten again (0 to 1). 0.5 is halfway. Higher means sooner. Advanced. |
-| Food slots | 3 | Server controlled | How many foods can be eaten at once (1 to 5). 3 keeps the game's own food row. Advanced. |
+| Passive Forsaken powers | On | Everyone | The Forsaken powers you have attuned work all the time, with the mastery bonuses you have earned. |
+| Kill credit range | 50 | Admins | How near you must be when a boss dies to be counted in the kill, in meters (10 to 200). Advanced. |
+| Attuned power limit | 3 | Admins | How many passive powers can be active at once (0 to 9; 0 is no limit). Advanced. |
+| Grant all | Grant | Solo, host or admin | Gives your character every boss power. Mastery you earned stays. Solo players, hosts and admins can use it. |
+| Reset progression | Reset | Solo, host or admin | Clears this character's boss mastery, attunement and kill receipts after you confirm. Solo players, hosts and admins can use it. |
+| Passive powers HUD | On | Everyone | Lists your passive powers among your effects on the HUD. |
+| Show skill gains | On | Everyone | Shows a row when a skill reaches a new level. The game's level-up message stays. |
+| Catch up | On | Admins | A skill below its highest level trains twice as fast until it is back there. Death still takes the game's own share. |
+| Progressive powers | On | Admins | A Forsaken power grows with every boss defeated beyond the one that grants it. |
+| Effect per boss, % | 10 | Admins | How much stronger a power's effect gets for each further boss, in percent (0 to 50). Advanced. |
+| Duration per boss, % | 10 | Admins | How much longer a power lasts for each further boss, in percent (0 to 50). Advanced. |
+| Cooldown cut per boss, % | 5 | Admins | How much shorter a power's cooldown gets for each further boss, in percent (0 to 20). Advanced. |
+| Inventory skills key | None | Everyone | Opens the inventory on its Achievements tab. |
+| Skills tabs in the inventory | On | Everyone | Adds the Achievements, Trophies and Texts tabs to the inventory. |
+| Stamina regen | 1 | Admins | How fast stamina comes back, times the game's rate (0 to 3). Advanced. |
+| Regen delay | 1 | Admins | How long stamina and eitr wait before they start coming back, times the game's wait (0 to 3). Advanced. |
+| Eitr regen | 1 | Admins | How fast eitr comes back, times the game's rate (0 to 3). Advanced. |
+| Run stamina | 1 | Admins | How much stamina running spends, times the game's cost (0 to 3). Advanced. |
+| Jump stamina | 1 | Admins | How much stamina jumping spends, times the game's cost (0 to 3). Advanced. |
+| Dodge stamina | 1 | Admins | How much stamina dodging spends, times the game's cost (0 to 3). Advanced. |
+| Swim stamina | 1 | Admins | How much stamina swimming spends, times the game's cost (0 to 3). Advanced. |
+| Sneak stamina | 1 | Admins | How much stamina sneaking spends, times the game's cost (0 to 3). Advanced. |
+| Block stamina | 1 | Admins | How much stamina blocking spends, times the game's cost (0 to 3). Advanced. |
+| Base health | 25 | Admins | Health before food, in health points (1 to 200). The slider rests on the game's own base. Advanced. |
+| Base stamina | Native player base (50 in the current game) | Admins | Stamina before food, in stamina points (1 to 300). The slider rests on the game's own base. Advanced. |
+| Attack stamina | 1 | Admins | How much stamina a weapon attack spends, times the game's cost (0 to 3). Advanced. |
+| Tool stamina | 1 | Admins | Multiplies stamina spent on building and attacks marked as home items by the game, such as hammer or hoe work (0 to 3). Advanced. |
+| Food health | 1 | Admins | Food health multiplier (0.05 to 3). Advanced. |
+| Food stamina | 1 | Admins | Food stamina multiplier (0 to 3). Advanced. |
+| Food eitr | 1 | Admins | Food eitr multiplier (0 to 3). Advanced. |
+| Food duration | 1 | Admins | How long a food lasts, times the game's time (0.05 to 3). Advanced. |
+| Eat again | 0.5 | Admins | The share of a food's time still left at which it can be eaten again (0 to 1). 0.5 is halfway. Higher means sooner. Advanced. |
+| Food slots | 3 | Admins (fixed) | How many foods can be eaten at once (1 to 5). 3 keeps the game's own food row. Advanced. |
 
-Server-controlled settings use the server's values while connected. Solo players, hosts and admins retain edit access. HUD, inventory tabs, keys and the passive-power switch are personal.
+Settings at Admins use the server's values while connected. Solo players, hosts and admins retain edit access. HUD, inventory tabs, keys and the passive-power switch start at Everyone.
 
 ## Known limits
 - Food scaling applies to the foods in the game, on the ground and in players' inventories. Foods stored in a chest, and foods that another mod adds later, can keep their old values until the next time the values are applied. If another mod also changes food values, the later change can be overwritten.
@@ -120,7 +120,7 @@ Needs MeadWorks Core at the same suite version. MeadWorks clients can join serve
 
 ## Install
 
-Install with a mod manager, or put `meadworks.skills.dll` in `BepInEx/plugins`. Install Core as well. Install on each player who wants it, and on the server for admin settings and locks.
+Install with a mod manager, or put `meadworks.skills.dll` in `BepInEx/plugins`. Install Core as well. Install on each player who wants it, and on the server for admin settings and permissions.
 
 ## License
 

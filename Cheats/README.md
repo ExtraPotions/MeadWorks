@@ -1,6 +1,6 @@
 # MeadWorks Cheats
 
-Cheats for solo play and for hosts and admins. Switch them on and off on the Cheats page of the MeadWorks menu (F8). Needs Meadworks: Core at exactly the same version.
+Cheats for solo play and for hosts and admins. Each cheat affects only the player who turns it on. Switch them on and off on the Cheats page of the MeadWorks menu (F8). Needs Meadworks: Core at exactly the same version.
 
 ![Player modes](https://raw.githubusercontent.com/ExtraPotions/MeadWorks/main/assets/Cheats/01-player-modes.png)
 ![Safe stamina](https://raw.githubusercontent.com/ExtraPotions/MeadWorks/main/assets/Cheats/02-safe-stamina.png)
@@ -26,18 +26,18 @@ God mode, Ghost mode, Fly and No build cost are switches at the top of the page.
 - **Fly.** Free flight.
 - **No build cost.** Building takes no materials.
 
-Only a solo player, the host or a server admin can change these four. Server locks never stop them. Other players cannot change them through the menu.
+These four start at Admins: only a solo player, the host or a server admin can turn them on, and each one affects only the player who turned it on. An admin can switch a row to Everyone in game. Other players cannot change them through the menu while the row is at Admins.
 
-**No carry limit** removes overweight movement penalties while keeping the weight display. **No durability loss** prevents wear on equipped gear, armor, shields, weapons and tools used for building and repairs. It preserves current durability rather than repairing gear. Both default to Off and use the server's values in multiplayer. Solo players, hosts and admins control their settings. Unloading Cheats removes their effects without changing normal carry capacity or shared item definitions.
+**No carry limit** removes overweight movement penalties while keeping the weight display. **No durability loss** prevents wear on equipped gear, armor, shields, weapons and tools used for building and repairs. It preserves current durability rather than repairing gear. Both default to Off, start at Admins and affect only your own character. Unloading Cheats removes their effects without changing normal carry capacity or shared item definitions.
 
 With Travel installed, an authorized player can choose **Go here** on a map pin card. The trip uses the game's teleport loading and floor checks, starting above the pin, terrain and water. Once the destination loads, its actual solid surface and water level set the landing height. Return restores the stored position and facing. Trips are unavailable during loading, the intro or an existing teleport; the game's cooldown can also refuse a trip. Leaving the world or unloading Cheats forgets the Return point.
 
 ### Destroy tools
-**Trash anything** lets the inventory's trash slot destroy worn, locked and quest items as well. Worn gear comes off first and the confirmation still opens. A worn pack whose rows hold items the bag has no room for is still refused: empty it first. Needs Meadworks: Inventory.
+**Trash anything** lets the inventory's trash slot destroy worn and quest items as well. Worn gear comes off first and the confirmation still opens. A worn pack whose rows hold items the bag has no room for is still refused: empty it first. Needs Meadworks: Inventory.
 
 **Delete tool** arms the delete key (Delete by default). While it is on, the key removes what the crosshair points at within interact reach: dropped items, building pieces, plants and pickables, trees, rocks and creatures. Nothing is dropped, and a chest goes with what it holds. Players, graves, boss altars and boss stones, and the parts of locations and dungeons are kept. The key does nothing while a window, the map, chat or the console is open. A Delete chip shows while the tool is on.
 
-Both switches default to Off and work only for a solo player, the host or a server admin, whatever the server's value. Other players see the removed objects gone too.
+Both switches default to Off and work only for a solo player, the host or a server admin; their permission is fixed to Admins. Other players see the removed objects gone too.
 
 ### Free stamina
 With Safe stamina on, running, jumping, sneaking, attacking and building cost no stamina while no hostile creature is within the safe radius. Tamed creatures, passive animals such as deer, hares and fish, and creatures that are peaceful until provoked never count. Stamina keeps regenerating for covered actions. Swimming always keeps its native stamina cost and regeneration pause. Blocking, dodging and drawing a bow still cost stamina. Turning Safe stamina on covers every action except carrying too much; each action has its own switch, and Ignored creatures lists creatures that do not count as hostile. Old Free swim config entries are retired.
@@ -65,50 +65,50 @@ Cheats binds one key: Delete aimed object, the Delete key by default. Change it 
 
 ## Settings
 
-Press F8 and open the Cheats page. Every setting row has a hover tip describing its effect. A setting marked Advanced is under the Advanced row of the page.
+Press F8 and open the Cheats page. Every setting row has a hover tip describing its effect. A setting marked Advanced is under the Advanced row of the page. The last column is the permission a setting starts with; the host or an admin can change it in game (see MeadWorks Core), except where it says fixed. A cheat's value is kept in each player's own config and affects only that player. Clear cheat marks and its options are the server's and apply to the whole world.
 
-| Name | Default | Policy | What it does |
+| Name | Default | Who can change | What it does |
 | --- | --- | --- | --- |
-| No carry limit | Off | Server controlled | Removes overweight movement penalties; carried weight still displays. |
-| No durability loss | Off | Server controlled | Equipped and used gear keeps its current durability. |
-| Cheats window | Open | Solo / host / admin action | Opens Items, Creatures and Player actions for solo players, hosts and admins. |
-| Trash anything | Off | Server controlled | The inventory's trash slot also destroys worn, locked and quest items. Works for solo players, hosts and admins. |
-| Delete tool | Off | Server controlled | While on, the delete key removes what the crosshair points at. Works for solo players, hosts and admins. |
-| Delete aimed object | Delete | Personal | Deletes the item, building piece, plant or creature under the crosshair, within reach, while Delete tool is on. |
-| God mode | Off | Server controlled | Turns the game's god mode on or off: nothing can hurt you. |
-| Ghost mode | Off | Server controlled | Turns the game's ghost mode on or off: creatures do not notice you. |
-| Fly | Off | Server controlled | Turns the game's free flight on or off. |
-| No build cost | Off | Server controlled | Building takes no materials. |
-| Wind behind the boat | Off | Server controlled | While you steer a boat, the wind always blows from behind it. |
-| Cheat flags tab | Off | Server controlled | Shows active cheat chips under the compass, below its pin-distance line. |
-| Loot multiplier | Off | Server controlled | Multiplies pickups except boss drops, boss trophies, caught fish, gems and items in Never multiply. |
-| Multiplier | 2 | Server controlled | How many times each pickup is multiplied (2 to 10). Advanced. |
-| Never multiply | empty | Server controlled | Items that are never multiplied. Use the game's internal item names with commas between them, such as Wood, Stone. Advanced. |
-| Safe stamina | Off | Server controlled | While no hostile creature is near, running, jumping, sneaking, attacking and building cost no stamina. Swimming keeps its native cost. |
-| Safe radius | 25 | Server controlled | How far away the nearest hostile creature must be, in meters (5 to 60). Advanced. |
-| Free sprint | On | Server controlled | Running costs no stamina while it is safe. Advanced. |
-| Free jump | On | Server controlled | Jumping costs no stamina while it is safe. Advanced. |
-| Free build | On | Server controlled | Building costs no stamina while it is safe. Advanced. |
-| Free attacks | On | Server controlled | Attacks cost no stamina while it is safe. Advanced. |
-| Free sneak | On | Server controlled | Sneaking costs no stamina while it is safe. Advanced. |
-| Free while encumbered | Off | Server controlled | Carrying too much still leaves these actions free while it is safe. Advanced. |
-| Ignored creatures | empty | Server controlled | Creatures that do not count as hostile. Use the game's internal creature names with commas between them, such as Boar, Greyling. Advanced. |
-| Clear cheat marks | Off | Server controlled | Clears carried items on load, inventory changes and save, and enables world cleanup. |
-| Keep clearing while playing | Off | Server controlled | Clears new world marks while playing; carried-item clearing remains active without it. Advanced. |
-| Clear object marks | Off | Server controlled | Also removes the mark from building pieces, stations and chests. Advanced. |
-| World round minutes | 10 | Server controlled | How often the whole world is gone through again, in minutes. 0 turns the rounds off (0 to 120). Advanced. |
-| Report only | Off | Server controlled | Only counts and reports what carries a mark. Nothing is changed. Advanced. |
-| Report impossible items | Off | Server controlled | Reports items that cannot be had in normal play, such as a stack or quality above the item's limit. Advanced. |
-| Remove debug items | Off | Server controlled | Removes the game's developer items wherever they are found. Advanced. |
-| Extra items to remove | empty | Server controlled | More items to remove along with the developer items. Use the game's internal item names, spelled exactly, with commas between them (64 at most). Advanced. |
-| Log each clean | Off | Server controlled | Logs every world object and carried item cleaned. Advanced. |
-| Tell players | Off | Server controlled | Tells players in a short notice when marks were cleared. Advanced. |
+| No carry limit | Off | Admins | Removes overweight movement penalties; carried weight still displays. |
+| No durability loss | Off | Admins | Equipped and used gear keeps its current durability. |
+| Cheats window | Open | Solo, host or admin | Opens Items, Creatures and Player actions for solo players, hosts and admins. |
+| Trash anything | Off | Admins (fixed) | The inventory's trash slot also destroys worn and quest items. Works for solo players, hosts and admins. |
+| Delete tool | Off | Admins (fixed) | While on, the delete key removes what the crosshair points at. Works for solo players, hosts and admins. |
+| Delete aimed object | Delete | Everyone | Deletes the item, building piece, plant or creature under the crosshair, within reach, while Delete tool is on. |
+| God mode | Off | Admins | Turns the game's god mode on or off: nothing can hurt you. |
+| Ghost mode | Off | Admins | Turns the game's ghost mode on or off: creatures do not notice you. |
+| Fly | Off | Admins | Turns the game's free flight on or off. |
+| No build cost | Off | Admins | Building takes no materials. |
+| Wind behind the boat | Off | Admins | While you steer a boat, the wind always blows from behind it. |
+| Cheat flags tab | Off | Admins | Shows active cheat chips under the compass, below its pin-distance line. |
+| Loot multiplier | Off | Admins | Multiplies pickups except boss drops, boss trophies, caught fish, gems and items in Never multiply. |
+| Multiplier | 2 | Admins | How many times each pickup is multiplied (2 to 10). Advanced. |
+| Never multiply | empty | Admins | Items that are never multiplied. Use the game's internal item names with commas between them, such as Wood, Stone. Advanced. |
+| Safe stamina | Off | Admins | While no hostile creature is near, running, jumping, sneaking, attacking and building cost no stamina. Swimming keeps its native cost. |
+| Safe radius | 25 | Admins | How far away the nearest hostile creature must be, in meters (5 to 60). Advanced. |
+| Free sprint | On | Admins | Running costs no stamina while it is safe. Advanced. |
+| Free jump | On | Admins | Jumping costs no stamina while it is safe. Advanced. |
+| Free build | On | Admins | Building costs no stamina while it is safe. Advanced. |
+| Free attacks | On | Admins | Attacks cost no stamina while it is safe. Advanced. |
+| Free sneak | On | Admins | Sneaking costs no stamina while it is safe. Advanced. |
+| Free while encumbered | Off | Admins | Carrying too much still leaves these actions free while it is safe. Advanced. |
+| Ignored creatures | empty | Admins | Creatures that do not count as hostile. Use the game's internal creature names with commas between them, such as Boar, Greyling. Advanced. |
+| Clear cheat marks | Off | Admins (fixed) | Clears carried items on load, inventory changes and save, and enables world cleanup. |
+| Keep clearing while playing | Off | Admins (fixed) | Clears new world marks while playing; carried-item clearing remains active without it. Advanced. |
+| Clear object marks | Off | Admins (fixed) | Also removes the mark from building pieces, stations and chests. Advanced. |
+| World round minutes | 10 | Admins (fixed) | How often the whole world is gone through again, in minutes. 0 turns the rounds off (0 to 120). Advanced. |
+| Report only | Off | Admins (fixed) | Only counts and reports what carries a mark. Nothing is changed. Advanced. |
+| Report impossible items | Off | Admins (fixed) | Reports items that cannot be had in normal play, such as a stack or quality above the item's limit. Advanced. |
+| Remove debug items | Off | Admins (fixed) | Removes the game's developer items wherever they are found. Advanced. |
+| Extra items to remove | empty | Admins (fixed) | More items to remove along with the developer items. Use the game's internal item names, spelled exactly, with commas between them (64 at most). Advanced. |
+| Log each clean | Off | Admins (fixed) | Logs every world object and carried item cleaned. Advanced. |
+| Tell players | Off | Admins (fixed) | Tells players in a short notice when marks were cleared. Advanced. |
 
-Every Cheats setting uses the server's value in multiplayer. Solo players, hosts and admins can change them. The Cheats window and its actions remain restricted to solo players, hosts and admins.
+Cheat values stay with the player who set them; the cleanup settings use the server's values in multiplayer. Solo players, hosts and admins can change every setting. The Cheats window and its actions remain restricted to solo players, hosts and admins.
 
 ## Known limits
 
-- God mode protects the local character when enabled by the solo player or server.
+- God mode protects only your own character, and only while you have it on.
 - Safe stamina does not cover swimming, blocking, dodging or drawing a bow.
 - Loot multiplier multiplies pickups only. It leaves boss drops, boss trophies, caught fish and gems alone.
 - A stored inventory above 256 KiB is not cleaned by the periodic rounds; it is cleaned when the world loads.
@@ -122,7 +122,7 @@ Needs MeadWorks Core at the same suite version. MeadWorks clients can join serve
 
 ## Install
 
-Install with a mod manager, or put `meadworks.cheats.dll` in `BepInEx/plugins`. Install Core as well. Install on each player who wants it, and on the server for admin settings and locks.
+Install with a mod manager, or put `meadworks.cheats.dll` in `BepInEx/plugins`. Install Core as well. Install on each player who wants it, and on the server for admin settings and permissions.
 
 ## License
 

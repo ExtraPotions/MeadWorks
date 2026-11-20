@@ -5,11 +5,12 @@ Elite creatures with mutations, boss aspects, new creatures for dungeons and bio
 ![Boss altar](https://raw.githubusercontent.com/ExtraPotions/MeadWorks/main/assets/Creatures/02-boss-altar.png)
 ![Compendium](https://raw.githubusercontent.com/ExtraPotions/MeadWorks/main/assets/Creatures/03-compendium.png)
 ![Boss compendium](https://raw.githubusercontent.com/ExtraPotions/MeadWorks/main/assets/Creatures/04-boss-compendium.png)
+![Elite nameplate](https://raw.githubusercontent.com/ExtraPotions/MeadWorks/main/assets/Creatures/05-elite.png)
 
 ## What it does
 
 ### Elite creatures
-A creature that spawns can be an elite. An elite has a level from 1 up to its difficulty preset's cap (Mild 3, Normal 3, Hard 7, Brutal 8; Custom uses Max elite level) on top of the game's stars, and carries mutations. Each level adds health, damage and drops: by default half again as much health, a quarter more damage and one more set of drops per level. Nameplates have three centered rows: space-separated mutation names in their group colors; the level star before the localized creature name, followed by tame status and the game's alert indicator; then the thin health bar. Creatures without mutations have no mutation row, and plain creatures show their name over health. Boss repeat-defeat stars also appear before the boss name, with boss health and aspects keeping their own HUD rows. Elites also have a body tint and a slightly larger body by level, and effect tells for auras, trails and death bursts.
+A creature that spawns can be an elite. An elite has a level from 1 up to its difficulty preset's cap (Mild 3, Normal 3, Hard 7, Brutal 8; Custom uses Max elite level) on top of the game's stars, and carries mutations. Each level adds health, damage and drops and reduces damage taken. By default, an elite has twice the base health at level 1, three times at level 2 and four times at level 3. Each level adds 25% of base damage and one set of drops and cuts damage taken by another 15 percentage points, before mutation effects. After those effects, a hit that was not fully blocked still deals at least 10% of the damage it started with. Nameplates have three centered rows: space-separated mutation names in their group colors; the level star before the localized creature name, followed by tame status and the game's alert indicator; then the thin health bar. Creatures without mutations have no mutation row, and plain creatures show their name over health. Boss repeat-defeat stars also appear before the boss name, with boss health and aspects keeping their own HUD rows. Elites also have a body tint and a slightly larger body by level, and effect tells for auras, trails and death bursts.
 
 - **How often.** Elite difficulty is Off, Mild, Normal, Hard, Brutal or Custom. Mild is a 5% chance with half the mutations and levels up to 3. Normal is 15% with levels up to 3. Hard is 25% with 125% of the mutations and levels up to 7. Brutal is 40% with 150% of the mutations and levels up to 8. Custom uses Elite chance %, Max elite level, the level weights and the mutation count under Advanced. Only Custom shows those controls. With Elite levels follow boss kills on, the highest elite level starts low and rises as the world defeats its bosses, reaching the maximum after all seven Forsaken.
 - **Levels and mutations.** An elite of level 1 to 8 carries 1, 2, 3, 4, 4, 5, 5 or 6 mutations. A mutation has a lowest level, and some only roll in certain biomes. Mutations never touch player items, containers or dropped items.
@@ -18,11 +19,12 @@ A creature that spawns can be an elite. An elite has a level from 1 up to its di
 - **Never elite.** Bosses, training dummies, the freed prisoners of the Deep North, the Shadows and the Fallen Warrior.
 - **Tamed elites.** A tamed elite keeps its level and mutations but drops no elite loot. Only the mutations that suit a tame act, and they hit only its enemies. The young of a tamed elite are elite too, each mutation with half the chance (Offspring inherit elite).
 - **Rewards.** Mutations that pay out when you kill (Eitr Font, Stamina Well, Swift Slayer, Reprieve) pay only the player who lands the kill, within 100 m.
+- **Gem drops.** With Equipment’s gem sockets enabled, a boss has a 20% chance to drop a gem and a wild elite has an 8% chance by default. Set Gem boss drop chance % and Gem elite drop chance % on the Equipment page.
 
 ### Mutations
-The Compendium has a searchable Mutations page with every name, group color, effect, lowest elite level and allowed biomes. Hover or focus a Compendium mutation row for its full name and effect. Tough, Fast and Regen use neutral steel text; the other names use the group tints above. The nameplate toggle hides the mutation row without hiding stars or tame status.
+The Compendium has a searchable Mutations page with every name, group color, effect, lowest elite level and allowed biomes. Effects use the Compendium's duration format, such as 1 min 30 s for Trainer. Hover or focus a Compendium mutation row for its full name and effect. Tough, Fast and Regen use neutral steel text; the other names use the group tints above. The nameplate toggle hides the mutation row without hiding stars or tame status.
 
-There are 128 mutations in eight groups, and Tough (50% more health), Fast (30% faster) and Regen (heals 1% of its health a second) besides. Every mutation can roll, and none has its own switch.
+There are 128 mutations in eight groups, and Tough (50% more health), Fast (30% faster) and Regen (heals 1% of its health a second) besides. All 131 can roll according to their level and biome rules.
 
 **Combat**
 
@@ -115,6 +117,8 @@ There are 128 mutations in eight groups, and Tough (50% more health), Fast (30% 
 | Shared Pain | Takes a quarter of the damage dealt to allies within 6 m. |
 | Sanguine | Allies within 10 m heal 10% of the damage they deal. |
 
+Leeching and Sanguine heal from a direct hit. Poison and burning ticks carry no attacker, so they pay no heal.
+
 **On death**
 
 | Mutation | What it does |
@@ -160,7 +164,7 @@ There are 128 mutations in eight groups, and Tough (50% more health), Fast (30% 
 | Veiled | Unseen beyond 15 m until it strikes. |
 | Keen Eye | Sees twice as far. |
 | Cowing Roar | Every 15 s staggers players within 6 m who are not blocking. |
-| Feinting | 20% chance after a hit to pause its next attack for half a second. |
+| Feinting | 20% chance after a hit to pause its next attack for 0.5 s. |
 | Cornered Fury | Below 30% health moves 40% faster but takes 25% more damage. |
 | Territorial | 30% more damage within 25 m of where it spawned, 30% less beyond. |
 | Echoing Swing | 15% of hits repeat 0.8 s later for half damage. |
@@ -173,15 +177,15 @@ There are 128 mutations in eight groups, and Tough (50% more health), Fast (30% 
 | --- | --- |
 | Generous | Drops two extra rolls of its loot. |
 | Docile | Tames 50% faster and never flees. |
-| Trainer | Killing it gives 30% faster skill gain for 90 s. |
+| Trainer | Killing it gives 30% faster skill gain for 1 min 30 s. |
 | Weary | Moves 25% slower and attacks 30% slower. |
 | Frail | 30% less health and takes 20% more damage. |
 | Healer's Gift | Killing it heals the killer 20% of their health over 8 s. |
-| Harvest | Dying leaves a berry bush or mushroom pickable for 10 minutes. |
+| Harvest | Dying leaves a berry bush or mushroom pickable for 10 min. |
 | Cartographer | Killing it reveals 60 m of map around it. |
 | Hearth | Players within 12 m get +2 comfort and 15% longer Rested. |
-| Eitr Font | Killing it gives 40% faster eitr regeneration for 60 s. |
-| Stamina Well | Killing it gives 40% faster stamina regeneration for 60 s. |
+| Eitr Font | Killing it gives 40% faster eitr regeneration for 1 min. |
+| Stamina Well | Killing it gives 40% faster stamina regeneration for 1 min. |
 | Vitality Aura | Heals players within 10 m by 4 health a second. |
 | Pacifist | Never attacks, and if tamed flees from hostile creatures. |
 | Beacon | Glows with warm light and reveals map within 40 m while you are near. |
@@ -254,7 +258,7 @@ Thirteen creatures join the world. Each has a spawn switch under Advanced, and a
 | Greydwarf Stonecaster | Black Forest forest groups of one or two, more at night | Greydwarf Eye, Resin, Fine Wood, Stonecaster Trophy 10% |
 | Rimehide Jotun | Mountain in cold weather, rare and alone | Freeze Gland, Silver, Crystal, Rimehide Jotun Trophy (Equipment) 10% |
 | Abyssal Tendriler | Deep open ocean, very rare | Raw Tendril, Serpent Scale, Abyssal Tendriler Trophy (Equipment) 10%, Abyssal Aegis (Equipment) 12%, always from three stars up |
-| Coffer Lurker | Burial Chambers and swamp crypts, 5% of crypts | Coins, Amber, Coffer Lurker Trophy 10% |
+| Coffer Lurker | Burial Chambers and swamp crypts, 20% of crypts | Coins, Amber, Coffer Lurker Trophy 10% |
 
 - **The Ossuary fighters.** Knifer: a fast knife that circles its target. Blademan: a plain sword fighter. Hewer: slower axe swings with more health and damage. Crusher: a slow mace with strong stagger. Lancer: a spear with long reach. Reaper: an atgeir with a wide sweep. Archer: a skeleton bow. Bolter: iron bolts from an arbalest, slowly.
 - **Crypt Headsman.** With Headsman moves on, he throws his axe at a target 4 to 10 m away after a one second amber warning ring, and swings behind him at flankers. With Headsman rise pair on (off by default), a landed axe raises up to two Ossuary Blademen beside it that last 35 seconds and drop nothing.
@@ -269,7 +273,7 @@ Thirteen creatures join the world. Each has a spawn switch under Advanced, and a
 With Horde spawns on, hostile creatures spawn in larger groups and each one is weaker to match. Passive animals such as deer and hares never form hordes. Horde size is how many times larger a group is (2 by default). Off by default.
 
 ### See the creatures
-- **Creature compendium.** F7 opens a window with the creatures of the world by biome, listing the ones you have seen. A creature's page shows its trophy, name and biome, kill and sighting figures, drops, body, the mutations you have seen and the elites you have seen.
+- **Creature compendium.** F7 opens a searchable window with the creatures you have seen, grouped by biome. A creature's page shows its trophy, name and biome, kill and sighting figures, drops, body, the mutations you have seen and the elites you have seen.
 - **Damage numbers.** Floating numbers for the damage you deal and the healing you get.
 - **Mutations on nameplates.** Group-colored mutation names above the creature name. Full effects are listed in the Compendium.
 - **Effect density.** How many of the mutations' particle effects and lights are drawn on your screen: Off, Low, Normal or High.
@@ -285,95 +289,96 @@ Kill credit goes to every connected player who dealt damage, including damage ov
 
 ## Settings
 
-Press F8 and open the Creatures page. Every setting row has a hover tip describing its effect. A setting marked Advanced is under the Advanced row of the page. Server controlled values come from the server for clients. Solo players, the host and admins can change them. Personal settings affect your own display or key binding.
+Press F8 and open the Creatures page. Every setting row has a hover tip describing its effect. A setting marked Advanced is under the Advanced row of the page. MeadWorks syncs settings. The host or an authorized admin can set each settings row to Admins or Everyone in game. Rows that control the world use a shared value under either permission. Display rows use each player’s own value under Everyone and the server value under Admins. The compendium key belongs to each player. Solo players can edit every row.
 
-| Name | Default | Policy | What it does |
+| Name | Default | Default permission | What it does |
 | --- | --- | --- | --- |
-| Elite creatures | On | Server controlled | Some creatures spawn as elites: stronger, with stars and mutations. |
-| Elite chance % | 15 | Server controlled | The chance that a creature spawns as an elite, in percent. Only the Custom difficulty uses and shows it. Advanced. |
-| Elite difficulty | Normal | Server controlled | How often elites appear and how high their levels go. Custom uses the weights and mutation count under Advanced. |
-| Max elite level | 3 | Server controlled | The highest level an elite can spawn at on Custom difficulty (1 to 8). Only shown for Custom. Advanced. |
-| Elite levels follow boss kills | On | Server controlled | The highest elite level starts low and rises as the world defeats its bosses. |
-| Defer to another level mod | On | Server controlled | Stops elite levels from adding health, damage, drops and stars when another level mod is loaded, while mutations still roll. Advanced. |
-| Custom level weights | `70,25,5,3,2,1,1,1` | Server controlled | For the Custom difficulty: how likely each elite level from 1 to 8 is, as up to eight whole numbers with commas between them. Advanced. |
-| Custom mutation count % | 100 | Server controlled | For the Custom difficulty: how many mutations elites carry, in percent of the usual number. Advanced. |
-| Health per level | 0.5 | Server controlled | How much health each elite level adds, as a part of the creature's own health. Advanced. |
-| Damage per level | 0.25 | Server controlled | How much damage each elite level adds, as a part of the creature's own damage. Advanced. |
-| Drops per level | 1 | Server controlled | How much each elite level adds to what the creature drops. Advanced. |
-| Offspring inherit elite | On | Server controlled | The young of a tamed elite are elite too. Advanced. |
-| Boss order | On | Server controlled | Bosses must be beaten in order the first time on a world. Previously defeated bosses can always be summoned again. |
-| Boss aspects | On | Server controlled | Bosses fight with aspects: extra abilities that change the fight. |
-| Aspects per boss | 1 | Server controlled | How many aspects each boss has (0 to 2). Advanced. |
-| Rotating altar aspects | On | Server controlled | Shows the next boss aspects and a countdown on the altar. The roll shifts every 15 seconds; summoning locks in the current roll. Aspects per boss must be at least 1. |
-| Boss aspects (Choose) | All On | Server controlled | Opens the aspect picker below. Advanced. |
-| Repeat boss stars | On | Server controlled | A boss shows one star for every time it has been defeated before. |
-| Boss damage board | Off | Server controlled | Tracks each player's boss damage and shows the results after the boss dies. |
-| Boss hints | On | Personal | Traders and the forge give a hint about the next boss the world has not defeated. |
-| Boss loot for every player | On | Server controlled | When a boss dies, every player near enough gets a full set of its drops. |
-| Horde spawns | Off | Server controlled | Hostile creatures spawn in larger groups, and each one is weaker to match. |
-| Horde size | 2 | Server controlled | How many times larger a horde is than a normal spawn (1 to 4). Advanced. |
-| Ossuary Knifer | On | Server controlled | Allows this creature to spawn. Advanced. |
-| Ossuary Blademan | On | Server controlled | Allows this creature to spawn. Advanced. |
-| Ossuary Hewer | On | Server controlled | Allows this creature to spawn. Advanced. |
-| Ossuary Crusher | On | Server controlled | Allows this creature to spawn. Advanced. |
-| Ossuary Lancer | On | Server controlled | Allows this creature to spawn. Advanced. |
-| Ossuary Reaper | On | Server controlled | Allows this creature to spawn. Advanced. |
-| Ossuary Archer | On | Server controlled | Allows this creature to spawn. Advanced. |
-| Ossuary Bolter | On | Server controlled | Allows this creature to spawn. Advanced. |
-| Crypt Headsman | On | Server controlled | Allows this creature to spawn. Advanced. |
-| Greydwarf Stonecaster | On | Server controlled | Allows this creature to spawn. Advanced. |
-| Rimehide Jotun | On | Server controlled | Allows this creature to spawn. Advanced. |
-| Coffer Lurker | On | Server controlled | Allows this creature to spawn. Advanced. |
-| Abyssal Tendriler | On | Server controlled | Allows this creature to spawn. Advanced. |
-| Attack warnings | On | Server controlled | The Headsman, Jotun and Tendriler show a warning before their special attacks. Off hides only the warnings; the special attacks still happen. Advanced. |
-| Headsman moves | On | Server controlled | The Crypt Headsman uses his own moves, such as the axe throw. Advanced. |
-| Headsman rise pair | Off | Server controlled | When the Crypt Headsman's axe lands, it can raise short-lived fighters near the spot. Headsman moves must be on. Advanced. |
-| Frost shell | On | Server controlled | The Rimehide Jotun grows frost plates that cut physical damage. Fire and lightning break them. Advanced. |
-| Jotun slam | On | Server controlled | The Rimehide Jotun uses its ground slam. Advanced. |
-| Lurker moves | On | Server controlled | The Coffer Lurker bites with its lid and rattles while it waits. Advanced. |
-| Creature compendium key | F7 | Personal | Opens and closes the creature compendium. |
-| Damage numbers | On | Personal | Shows floating numbers for the damage you deal and the healing you get. |
-| Show mutations on nameplates | On | Personal | Shows group-colored mutation names above an elite's name. Mutation effects are listed in the Compendium. |
-| Effect density | Normal | Personal | How many of the mutations' particle effects are drawn on your screen. Advanced. |
-| Loot rules data (synced) | empty | Server controlled | The loot rules the server sends to its players. The server fills it in; leave it as it is. Advanced. |
+| Elite creatures | On | Admins | Some creatures spawn stronger, with elite levels and mutations. |
+| Elite chance % | 15 | Admins | The chance that a creature spawns as an elite, in percent. Only the Custom difficulty uses and shows it. Advanced. |
+| Elite difficulty | Normal | Admins | How often elites appear and how high their levels go. Custom uses the weights and mutation count under Advanced. |
+| Max elite level | 3 | Admins | The highest level an elite can spawn at on Custom difficulty (1 to 8). Only shown for Custom. Advanced. |
+| Elite levels follow boss kills | On | Admins | The highest elite level starts low and rises as the world defeats its bosses. |
+| Defer to another level mod | On | Admins | Stops elite levels from adding health, damage, drops and stars when another level mod is loaded, while mutations still roll. Advanced. |
+| Custom level weights | `70,25,5,3,2,1,1,1` | Admins | For the Custom difficulty: how likely each elite level from 1 to 8 is, as up to eight whole numbers with commas between them. Advanced. |
+| Custom mutation count % | 100 | Admins | For the Custom difficulty: how many mutations elites carry, in percent of the usual number. Advanced. |
+| Health per level | 1 | Admins | How much health each elite level adds, as a part of the creature's own health. Level 1 has twice the health, level 2 three times, level 3 four times. Advanced. |
+| Defense per level | 15 | Admins | How much less damage an elite takes per elite level, in percent. 15 means level 1 keeps 85% of a hit, level 2 keeps 70%, level 3 keeps 55%. Advanced. |
+| Damage per level | 0.25 | Admins | How much damage each elite level adds, as a part of the creature's own damage. Advanced. |
+| Drops per level | 1 | Admins | How much each elite level adds to what the creature drops. Advanced. |
+| Offspring inherit elite | On | Admins | The young of a tamed elite are elite too. Advanced. |
+| Boss order | On | Admins | Bosses must be beaten in order the first time on a world. Previously defeated bosses can always be summoned again. |
+| Boss aspects | On | Admins | Bosses fight with aspects: extra abilities that change the fight. |
+| Aspects per boss | 1 | Admins | How many aspects each boss has (0 to 2). Advanced. |
+| Rotating altar aspects | On | Admins | Shows the next boss aspects and a countdown on the altar. The roll shifts every 15 seconds; summoning locks in the current roll. Aspects per boss must be at least 1. |
+| Boss aspects (Choose) | All On | Admins | Opens the aspect picker below. Advanced. |
+| Repeat boss stars | On | Admins | A boss shows one star for every time it has been defeated before. |
+| Boss damage board | Off | Admins | Tracks each player's boss damage and shows the results after the boss dies. |
+| Boss hints | On | Everyone | Traders and the forge give a hint about the next boss the world has not defeated. |
+| Boss loot for every player | On | Admins | When a boss dies, every player near enough gets a full set of its drops. |
+| Horde spawns | Off | Admins | Hostile creatures spawn in larger groups, and each one is weaker to match. |
+| Horde size | 2 | Admins | How many times larger a horde is than a normal spawn (1 to 4). Advanced. |
+| Ossuary Knifer | On | Admins | Allows this creature to spawn. Advanced. |
+| Ossuary Blademan | On | Admins | Allows this creature to spawn. Advanced. |
+| Ossuary Hewer | On | Admins | Allows this creature to spawn. Advanced. |
+| Ossuary Crusher | On | Admins | Allows this creature to spawn. Advanced. |
+| Ossuary Lancer | On | Admins | Allows this creature to spawn. Advanced. |
+| Ossuary Reaper | On | Admins | Allows this creature to spawn. Advanced. |
+| Ossuary Archer | On | Admins | Allows this creature to spawn. Advanced. |
+| Ossuary Bolter | On | Admins | Allows this creature to spawn. Advanced. |
+| Crypt Headsman | On | Admins | Allows this creature to spawn. Advanced. |
+| Greydwarf Stonecaster | On | Admins | Allows this creature to spawn. Advanced. |
+| Rimehide Jotun | On | Admins | Allows this creature to spawn. Advanced. |
+| Coffer Lurker | On | Admins | Allows this creature to spawn. Advanced. |
+| Abyssal Tendriler | On | Admins | Allows this creature to spawn. Advanced. |
+| Attack warnings | On | Admins | The Headsman, Jotun and Tendriler show a warning before their special attacks. Off hides only the warnings; the special attacks still happen. Advanced. |
+| Headsman moves | On | Admins | The Crypt Headsman uses his own moves, such as the axe throw. Advanced. |
+| Headsman rise pair | Off | Admins | When the Crypt Headsman's axe lands, it can raise short-lived fighters near the spot. Headsman moves must be on. Advanced. |
+| Frost shell | On | Admins | The Rimehide Jotun grows frost plates that cut physical damage. Fire and lightning break them. Advanced. |
+| Jotun slam | On | Admins | The Rimehide Jotun uses its ground slam. Advanced. |
+| Lurker moves | On | Admins | The Coffer Lurker bites with its lid and rattles while it waits. Advanced. |
+| Creature compendium key | F7 | Local binding | Opens and closes the creature compendium. |
+| Damage numbers | On | Everyone | Shows floating numbers for the damage you deal and the healing you get. |
+| Show mutations on nameplates | On | Everyone | Shows group-colored mutation names above an elite's name. Mutation effects are listed in the Compendium. |
+| Effect density | Normal | Everyone | How many of the mutations' particle effects are drawn on your screen. Advanced. |
+| Loot rules data (synced) | empty | Admins | The loot rules the server sends to its players. The server fills it in; leave it as it is. Advanced. |
 
 ### Boss aspect picker settings
 
 Each switch below is in the Advanced Boss aspects picker. Effects and loot multipliers are listed under Bosses.
 
-| Name | Default | Policy |
+| Name | Default | Default permission |
 | --- | --- | --- |
-| Colossal | On | Server controlled |
-| Brutal | On | Server controlled |
-| Enraged | On | Server controlled |
-| Nightfall | On | Server controlled |
-| Elementalist | On | Server controlled |
-| Reflective | On | Server controlled |
-| Shielded | On | Server controlled |
-| Adaptive | On | Server controlled |
-| Fixated | On | Server controlled |
-| Bountiful | On | Server controlled |
-| Portalbound | On | Server controlled |
-| Phantom | On | Server controlled |
-| Mending | On | Server controlled |
-| Tethered | On | Server controlled |
-| Summoner | On | Server controlled |
-| Twin | On | Server controlled |
-| Stormbound | On | Server controlled |
-| Gravitic | On | Server controlled |
-| Echoing | On | Server controlled |
-| Earthshaker | On | Server controlled |
-| Sundering | On | Server controlled |
-| Draining | On | Server controlled |
-| Death Throes | On | Server controlled |
-| Bone-plated | On | Server controlled |
-| Steadfast | On | Server controlled |
-| Unshakable | On | Server controlled |
-| Devourer | On | Server controlled |
-| Wintry | On | Server controlled |
-| Hexing | On | Server controlled |
-| Warcaller | On | Server controlled |
-| Ember Trail | On | Server controlled |
+| Colossal | On | Admins |
+| Brutal | On | Admins |
+| Enraged | On | Admins |
+| Nightfall | On | Admins |
+| Elementalist | On | Admins |
+| Reflective | On | Admins |
+| Shielded | On | Admins |
+| Adaptive | On | Admins |
+| Fixated | On | Admins |
+| Bountiful | On | Admins |
+| Portalbound | On | Admins |
+| Phantom | On | Admins |
+| Mending | On | Admins |
+| Tethered | On | Admins |
+| Summoner | On | Admins |
+| Twin | On | Admins |
+| Stormbound | On | Admins |
+| Gravitic | On | Admins |
+| Echoing | On | Admins |
+| Earthshaker | On | Admins |
+| Sundering | On | Admins |
+| Draining | On | Admins |
+| Death Throes | On | Admins |
+| Bone-plated | On | Admins |
+| Steadfast | On | Admins |
+| Unshakable | On | Admins |
+| Devourer | On | Admins |
+| Wintry | On | Admins |
+| Hexing | On | Admins |
+| Warcaller | On | Admins |
+| Ember Trail | On | Admins |
 
 ## Known limits
 

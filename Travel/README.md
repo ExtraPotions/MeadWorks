@@ -1,6 +1,6 @@
 # MeadWorks Travel
 
-A bigger, searchable map and a weather line under the minimap. Switch each part on or off on the Travel page of the MeadWorks menu (F8). Needs Meadworks: Core at exactly the same version.
+A searchable full map, selectable portal destinations, transport markers and a weather line under the minimap. Configure the module on the Travel page of the MeadWorks menu (F8). Needs Meadworks: Core at exactly the same version.
 
 ![Pin groups](https://raw.githubusercontent.com/ExtraPotions/MeadWorks/main/assets/Travel/01-pin-groups.png)
 ![Hover card](https://raw.githubusercontent.com/ExtraPotions/MeadWorks/main/assets/Travel/02-hover-card.png)
@@ -20,7 +20,8 @@ The full map has a side panel, and the map fills the rest of the screen inside o
 - Edit on that card changes the name and icon of a pin you placed. Checked-off pins stay checked off, and a shared pin keeps its owner. Cancel leaves the pin as it was.
 - Undo brings back the last pin removed from the card or with right click. Only the latest removal is kept, and it lasts until you leave the world.
 - Track marks one pin. It is drawn in gold, slightly larger, on the map and the minimap, and its name stays visible. Track again, or Stop tracking, clears it. The last grave is unchanged. Core also keeps the tracked pin on the compass at any distance, ahead of ordinary nearby pins.
-- With Cheats loaded, solo players, hosts and admins also get **Go here** on the pin card when their player is ready to teleport. It uses the game's teleport loading and floor checks. **Return** in the Cheats window's Player tab takes you back once, to where you stood before the last accepted Go here trip. The point lasts for the current world session. Travel works without Cheats.
+- Map pin travel is off by default. Turn it on to give players **Go here** on visible pin cards. The trip checks the world’s portal rules, including boss fights that block portals, carried items and whether you are on a ship or cart. It uses the game’s teleport loading and floor checks.
+- With Map pin travel off and Cheats loaded, an eligible player can use the Cheats **Go here** action and then **Return** in the Cheats window’s Player tab. The return point lasts for the current world session.
 - The biome and the position under the pointer show over the map, with zoom buttons, a scale line and a strip that names the map's clicks and keys.
 - The game's own clicks and keys work as before.
 
@@ -36,11 +37,18 @@ A line under the minimap shows the day and time, with the name of the environmen
 ### Portals, boats and carts
 A portal you have been near shows its tag on the map and the minimap. A boat or cart you built, sailed or pulled shows where you left it, with the game's icon and its name. A label set on that vehicle is used when it has one. The mark updates when you leave the vehicle or it unloads, and it is removed if the vehicle is destroyed. These marks last for the current world and are not written into the map save. Transport markers, on the Travel page, turns them on or off.
 
+Claimed beds you have seen get their own Owned bed pins. Travel remembers them with your character for that world and clears stale pins once it can confirm the bed was destroyed or changed owners.
+
+### Ships and paved roads
+On board, the HUD can show ship speed and hull health. Ship propulsion and Ship steering both start at 1, the game's usual sail, paddle and rudder response. Logging out aboard a ship remembers your spot on its deck. When the ship can be found and loaded on your next login in that world, you return to that spot, even if it moved. Otherwise the game uses its normal login point.
+
+The Paved-road bonus (%) defaults to 10. Jog and run faster and use less running stamina while on paved ground. The bonus does not apply on floors, aboard ships, while swimming or in the air.
+
 ### Picking a portal
 Step into a portal and the full map opens with a mark on each portal open to you. Click a mark, or a row in the panel, to go there. Tags no longer pair portals: any portal can send you to any other one you are allowed to use, and its tag is simply what it is called on the map and in the list.
 
 - The panel has a search box and lists your favorites, then the remaining portals from nearest to farthest with their distances. The star on a row marks a favorite; favorites are saved with your character, separately for each world, and their marks carry a gold ring.
-- Ore and metal still cannot go through. The black screen and the delay before a portal can be used again are the base game's, and Quick portals sets the wait.
+- The world’s usual restrictions on portal cargo still apply. The black screen and the delay before a portal can be used again are the base game's, and Quick portals sets the wait.
 - Close the map and nothing happens. Being moved away from the portal also closes it.
 - A portal has one of three access settings. Public, which a freshly built portal has, is open to all players. Private is for its owner alone, plus solo players, the host and admins. Admin is for admins alone.
 - A portal's owner is the account that built it, so every character on that account owns it. The server notes the owner when the portal is built.
@@ -50,13 +58,16 @@ Step into a portal and the full map opens with a mark on each portal open to you
 - A portal closed to you is left off the list, stays dark, and shows the game's no-access text when you step into it. Its hover text names the access setting when that is not Public.
 - In multiplayer the server or host keeps its own record of every portal's owner and access, and approves each trip and each access change from that record. Travel must be installed on the server for this. Without it there, portals behave as in the base game and you can still join.
 - When picking a destination, the departure respects wards around the source. In solo and for the listen host, a ward over the landing spot can also refuse the trip, even if that area is unloaded.
-- Portal travel, on the Travel page, chooses between Pick on map and the base game's Tag pairing, and a server can lock either. With Tag pairing locked by the server, access settings do nothing.
+- Portal travel, on the Travel page, chooses between Pick on map and the base game's Tag pairing, and in multiplayer the world uses the server value. When an admin keeps the setting at Admins and chooses Tag pairing, players use the game’s matching-tag portals and portal access modes are off.
+- The host or an admin can open Portal management with Manage on the Travel page to search the portal list, change access or assign a new owner by account ID.
 - Portal pieces from other mods are included: anything carrying the game's portal component is listed.
 
 ### Quick portals
 Portal waits rise with distance. A fully loaded destination can skip the black screen and use a wait starting at 0.5 seconds. A trip needing loading keeps the black screen and the game's two-second delay before placement, then holds at the destination for 0.5 seconds nearby, rising to the native six-second hold at 10,000 meters (eight seconds total). Ground and objects must still pass the game's checks; loading can take longer and the native 15-second floor fallback stays unchanged. These timing gates are the same solo and on a dedicated client.
 
 Skipping the fade also requires five seconds of uninterrupted residence in the destination's reference zone and its surrounding active, loaded sectors. Newly entered areas and destinations outside that area keep the black screen for the whole trip.
+
+Portal effects starts at 50% and scales fire, light, hum and swirl. At 0% those effects are off. At 100% they are at the game’s usual strength.
 
 ### Keys and clicks
 Travel binds no keys of its own.
@@ -75,33 +86,35 @@ Travel binds no keys of its own.
 
 Press F8 and open the Travel page. Every setting row has a hover tip describing its effect. A setting marked Advanced is under the Advanced row of the page.
 
-| Name | Default | Policy | What it does |
+| Name | Default | Default permission | What it does |
 | --- | --- | --- | --- |
-| Portal travel | Pick on map | Server lockable | Pick on map: stepping into a portal opens the map and you choose where to go among the portals open to you. Tag pairing: base-game portals, linked two by two through matching tags. |
-| Quick portals | On | Server lockable | Scales portal waits with distance and keeps the game's loading checks. Skipping the black screen needs a fully loaded destination and five seconds in its reference zone. |
-| Shortest portal wait | 0.5 | Server lockable | Minimum wait, or minimum hold after placement on loading trips (0.1 to 8 seconds, capped at the native hold). Loading can take longer. |
-| Far portal range | 10,000 | Server lockable | The distance in meters at which the game's full wait applies (100 to 20,000). |
-| Portal effects | 50% | Personal | Scales portal fire, light, hum and swirl from 0% (off) to 100% (the game's normal effects), in steps of 5%. |
-| Ship propulsion | 1 | Server controlled | Multiplies each ship's sail and paddle force, from 0.5 to 2 (1 keeps its original force). |
-| Ship steering | 1 | Server controlled | Multiplies each ship's rudder response and steering force, from 0.5 to 2 (1 keeps its original steering). |
-| Paved-road bonus (%) | 10 | Server controlled | Increases jog and run speed and reduces running stamina use on paved terrain by this percent (0 to 20; 0 disables it). |
-| Restyle full map | On | Personal | Draws the full map with the MeadWorks side panel: search, filters and the list of pins. Off gives the game's own map back. |
-| Show Home pins | On | Personal | Shows Home pins on the map. Advanced. |
-| Show Portal pins | On | Personal | Shows Portal pins on the map. Advanced. |
-| Show Boss pins | On | Personal | Shows Boss pins on the map. Advanced. |
-| Show Camp pins | On | Personal | Shows Camp pins on the map. Advanced. |
-| Show Ore pins | On | Personal | Shows Ore pins on the map. Advanced. |
-| Show Death pins | On | Personal | Shows Death pins on the map. Advanced. |
-| Show Custom pins | On | Personal | Shows Custom pins on the map. Advanced. |
-| Show Players pins | On | Personal | Shows other players on the map. Advanced. |
-| Map pin names | On | Personal | Writes the names of pins on the map. |
-| Map pin size | 48 | Personal | How large pins are drawn on the map, in pixels (32 to 64). |
-| Hide pins beyond zoom | 0.15 | Personal | Hides your ordinary pins once the map is zoomed out past this point. Lower hides them sooner; 1 never hides them. Pins you have crossed off always stay. |
-| Cluster map pins | On | Personal | Pins that overlap on screen are drawn as one badge with a count. |
-| 24-hour clock | On | Personal | Shows the time as 14:30 rather than 2:30 PM. |
-| Transport markers | On | Personal | Shows a discovered portal's tag, and the last place you left a boat or cart you built or used. |
+| Portal travel | Pick on map | Admins | Pick on map: stepping into a portal opens the map and you choose where to go among the portals open to you. Tag pairing: base-game portals, linked two by two through matching tags. |
+| Portal management | | Host or admins | Opens Manage to search portals and change access or ownership. |
+| Quick portals | On | Everyone | Scales portal waits with distance and keeps the game's loading checks. Skipping the black screen needs a fully loaded destination and five seconds in its reference zone. |
+| Shortest portal wait | 0.5 | Everyone | Minimum wait, or minimum hold after placement on loading trips (0.1 to 8 seconds, capped at the native hold). Loading can take longer. |
+| Far portal range | 10,000 | Everyone | The distance in meters at which the game's full wait applies (100 to 20,000). |
+| Portal effects | 50% | Everyone | Scales portal fire, light, hum and swirl from 0% (off) to 100% (the game's normal effects), in steps of 5%. |
+| Ship propulsion | 1 | Admins | Multiplies each ship's sail and paddle force, from 0.5 to 2 (1 keeps its original force). |
+| Ship steering | 1 | Admins | Multiplies each ship's rudder response and steering force, from 0.5 to 2 (1 keeps its original steering). |
+| Paved-road bonus (%) | 10 | Admins | Increases jog and run speed and reduces running stamina use on paved terrain by this percent (0 to 20; 0 disables it). |
+| Restyle full map | On | Everyone | Draws the full map with the MeadWorks side panel: search, filters and the list of pins. Off gives the game's own map back. |
+| Show Home pins | On | Everyone | Shows Home pins on the map. Advanced. |
+| Show Portal pins | On | Everyone | Shows Portal pins on the map. Advanced. |
+| Show Boss pins | On | Everyone | Shows Boss pins on the map. Advanced. |
+| Show Camp pins | On | Everyone | Shows Camp pins on the map. Advanced. |
+| Show Ore pins | On | Everyone | Shows Ore pins on the map. Advanced. |
+| Show Death pins | On | Everyone | Shows Death pins on the map. Advanced. |
+| Show Custom pins | On | Everyone | Shows Custom pins on the map. Advanced. |
+| Show Players pins | On | Everyone | Shows other players on the map. Advanced. |
+| Map pin names | On | Everyone | Writes the names of pins on the map. |
+| Map pin size | 48 | Everyone | How large pins are drawn on the map, in pixels (32 to 64). |
+| Map pin travel | Off | Admins | Adds Go here to visible pin cards on the restyled map. The world's portal restrictions apply. |
+| Hide pins beyond zoom | 0.15 | Everyone | Hides your ordinary pins once the map is zoomed out past this point. Lower hides them sooner; 1 never hides them. Pins you have crossed off always stay. |
+| Cluster map pins | On | Everyone | Pins that overlap on screen are drawn as one badge with a count. |
+| 24-hour clock | On | Everyone | Shows the time as 14:30 rather than 2:30 PM. |
+| Transport markers | On | Everyone | Shows a discovered portal's tag, and the last place you left a boat or cart you built or used. |
 
-The chips in the side panel set the same switches as Show Home pins and the rest. Map and weather settings are personal. Ship and road bonuses are server controlled, and the four portal settings use your own values unless a server locks them; solo players, the host and admins retain edit access.
+The chips in the side panel set the same switches as Show Home pins and the rest. MeadWorks syncs settings. The host or an authorized admin can set each settings row to Admins or Everyone in game. Portal travel, Map pin travel, Ship propulsion, Ship steering and Paved-road bonus (%) use a world-wide value under either permission. Other rows use each player’s own value under Everyone and the server value under Admins. Solo players can edit every row.
 
 ## Known limits
 
@@ -111,7 +124,6 @@ The chips in the side panel set the same switches as Show Home pins and the rest
 - Tracking keeps one destination on the map, minimap and compass. It leaves the last-grave marker unchanged.
 - Picking a portal needs the map. In a world played without one, portals pair by tag as in the base game, and a pair that includes a portal closed to you stays shut.
 - The portal picker is used with the mouse.
-- If you choose Tag pairing yourself on a server that leaves the choice open, the server checks a paired trip the same way, and a pair that includes a portal closed to you stays shut.
 - Ownership follows the account as the server sees it. An account that plays the same world once over Steam and once over crossplay, or hosts it and later joins it on a dedicated server through crossplay, may be seen as two owners.
 - Transport markers are remembered for the current world only. A boat or cart you have not built, sailed or pulled is not marked.
 
@@ -121,7 +133,7 @@ Needs MeadWorks Core at the same suite version. MeadWorks clients can join serve
 
 ## Install
 
-Install with a mod manager, or put `meadworks.travel.dll` in `BepInEx/plugins`. Install Core as well. Install on each player who wants it, and on the server for admin settings and locks.
+Install with a mod manager, or put `meadworks.travel.dll` in `BepInEx/plugins`. Install Core as well. Install on each player who wants it, and on the server for shared settings and portal access.
 
 ## License
 
