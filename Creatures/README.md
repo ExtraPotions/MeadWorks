@@ -242,7 +242,7 @@ The altar hover describes each aspect and its loot multiplier, with their produc
 | Ember Trail | ×1.3 | Where it walks, the ground burns for 4 s, in its biome's element: fire, frost or poison. |
 
 ### New creatures
-Thirteen creatures join the world. Each has a spawn switch under Advanced, and all thirteen are on by default. In crypts they join the skeleton and draugr spawners at low weight. Most carry a look of their own: props from the game's meshes, a larger or different held weapon, and a glow color. Drops marked Equipment, and the trophies, need Equipment installed.
+Thirteen creatures join the world. Each has a spawn switch under Advanced, and all thirteen are on by default. In crypts they join the skeleton and draugr spawners at low weight. Most carry a look of their own: props from the game's meshes, a larger or different held weapon, and eyes in a color of their own. Drops marked Equipment, and the trophies, need Equipment installed.
 
 | Creature | Where | Drops |
 | --- | --- | --- |
