@@ -46,7 +46,7 @@ Per-plant tuning changes what a plant costs, what it yields, how much room it ne
 
 ## Controls
 
-Planting shortcuts work only with the cultivator equipped, a plant selected, and no window or text field active. Every planting shortcut is configurable under Advanced on the Farming page. The controller shortcuts can be captured by holding LB and pressing a D-pad direction; the configuration writes these as an arrow plus JoystickButton4. With the cultivator out on a keyboard, compact planting chips extend the native tool hints, with row and column keys paired. The vitals panel clears the combined hint block. They follow configured bindings and the Key hints setting. A controller keeps the game's own hints.
+Planting shortcuts work only with the cultivator equipped, a plant selected, and no window or text field active. Every planting shortcut is configurable under Advanced on the Farming page. The controller shortcuts can be captured by holding LB and pressing a D-pad direction; the configuration writes these as an arrow plus JoystickButton4. With Grid planting on, the cultivator shows Place, Build menu and the planting shortcuts in the bottom hint bar, with row and column keys paired. The hints follow your keyboard bindings and the Key hints setting. The game's tool hints return when you put the cultivator away, switch off Grid planting or use a controller.
 
 | Action | Keyboard | Controller |
 | --- | --- | --- |
@@ -99,7 +99,7 @@ Press F8 and open the Farming page. Every setting row has a hover tip describing
 | Plant wild crops | On | Admins | Lets the cultivator plant the wild flax and barley. Advanced. |
 | Plant crop resources | Off | Admins | Lets the cultivator plant the crop pickables. A planted one gives one pick and is then gone. Advanced. |
 | Plant tree saplings | On | Admins | Lets the cultivator plant the tree saplings. Advanced. |
-| Plant stones and branches | On | Admins | Lets the cultivator plant stones, flint and branches. Advanced. |
+| Plant stones and branches | On | Admins | Lets the cultivator plant stones, flint, wood branches and Frostwood branches. Advanced. |
 | Plant tuning | On | Admins | Master for per-plant numbers and global growth switches; Off restores native values and growth checks. Saved choices are kept. |
 | Per-plant values (Plants button) | | Edits follow each row’s permission | Opens a list of the plants, where the values of one plant are set at a time. |
 | Per-plant costs | empty | Admins | What each plant costs to place, as plant=amount pairs. Advanced. |

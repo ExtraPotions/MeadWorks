@@ -12,21 +12,23 @@ Cheats for solo play and for hosts and admins. Each cheat affects only the playe
 
 Open the Cheats page and press **Open** beside Cheats window. The window follows the screen size and closes with Escape or its Close button. Only solo players, hosts and admins can open it or use its actions. Losing permission or leaving the character closes it.
 
-- **Items.** Search items by their localized names and select a result with its icon. Enter an amount from 1 to 1000 and choose a quality up to that item's native maximum. Give adds items to your inventory and drops any overflow at your feet; Drop puts the full amount at your feet. Stacks stay within the item's native limit. Boss drops, boss trophies and quest/key items are hidden until Show boss and key items is on. Developer items stay hidden. Spawned drops do not multiply again through Loot multiplier.
+- **Items.** Search items by their localized names and select a result with its icon. Enter an amount from 1 to 1000 and choose a quality up to that item's recipe's top quality. Give adds items to your inventory and drops any overflow at your feet; Drop puts the full amount at your feet. Stacks stay within the item's native limit. Boss drops, boss trophies and quest/key items are hidden until Show boss and key items is on. Developer items stay hidden. Spawned drops do not multiply again through Loot multiplier.
 - **Player.** Heal restores health, stamina and eitr to their current maximums. Repair restores all carried and worn gear, including gear in dedicated slots and backpack rows, without needing a station or materials. Clear ground items removes the loose dropped items within 30 meters of you and reports how many; graves, items in chests, placed pieces and fish still in the water stay. Return takes you to where you stood before your last accepted **Go here** trip from a Travel map pin. It holds one point for the current session; an accepted Return consumes it. A refused trip leaves the point intact.
 - **Creatures.** Search the registered creature prefabs by localized name, select one, choose 0 to 2 native stars and a count from 1 to 10, then Spawn in front of your character. Players and untranslated names stay hidden. With Creatures elite creatures enabled and its difficulty above Off, the star choice extends to 8. Stars use the game's native level; they do not select elite mutations.
 
 Spawned items receive the game's cheat mark. Clear cheat marks removes it when enabled; Report only preserves it. These actions use game APIs directly and require no developer commands.
 
 ### Player modes
-God mode, Ghost mode, Fly and No build cost are switches at the top of the page. They set the game's own modes, so the game's own commands change the same state.
+God mode, Ghost mode, Fly and No build cost are switches at the top of the page. They set the game's own modes, so the game's own commands change the same state. Noclip and One-hit kill sit with them and work on top of the game's own flight and damage.
 
 - **God mode.** Nothing hurts you: attacks, status effects, environmental damage and health costs take no health. Healing, loading saved health and a lower maximum health still work. The mode comes back after you respawn while you may change it, using the current solo or server setting.
 - **Ghost mode.** Creatures do not notice you.
 - **Fly.** Free flight.
 - **No build cost.** Building takes no materials.
+- **Noclip.** Your character moves freely through terrain, rocks, trees, building pieces and doors in any direction, at the game's fly speed with its fly controls. Creatures and projectiles do not collide with or push you. It turns on the game's own flight while it is on and puts flight back to your Fly switch when it ends. It ends when you turn it off, die, teleport, leave the world or lose permission; if you are then inside terrain or a piece, you are lifted to the nearest free spot above. Other players see your normal movement.
+- **One-hit kill.** Every damaging hit you land on a creature kills it, bosses included. The hit is raised before it is sent, so a creature another player owns dies on that player's side; if that player runs Cheats too, boss and elite defenses that cap or scale hits cannot stop it. Players keep normal damage in PvP, and trees, rocks and pieces keep theirs. Drops are the creature's normal drops: like God, Ghost and Fly, the mode does not mark them as cheated.
 
-These four start at Admins: only a solo player, the host or a server admin can turn them on, and each one affects only the player who turned it on. An admin can switch a row to Everyone in game. Other players cannot change them through the menu while the row is at Admins.
+These six start at Admins: only a solo player, the host or a server admin can turn them on, and each one affects only the player who turned it on. An admin can switch a row to Everyone in game. Other players cannot change them through the menu while the row is at Admins.
 
 **No carry limit** removes overweight movement penalties while keeping the weight display. **No durability loss** prevents wear on equipped gear, armor, shields, weapons and tools used for building and repairs. It preserves current durability rather than repairing gear. Both default to Off, start at Admins and affect only your own character. Unloading Cheats removes their effects without changing normal carry capacity or shared item definitions.
 
@@ -56,7 +58,7 @@ The order is Wind (while steering), God, Ghost, Fly, No cost, No carry limit, No
 ### Clear cheat marks
 The game marks items and buildings made with cheats. Clear cheat marks removes the mark from carried items (bag, action bar, equipped gear, dedicated slots, backpack rows and keys) on load, inventory changes and save. This uses the server's setting on connected players too, even with Keep clearing while playing off. Report only counts carried marks without changing them, and Log each clean logs each carried item cleaned.
 
-World cleanup runs when a world loads and keeps going while you play if Keep clearing while playing is on. On a server, world cleanup runs on the server. Clear object marks also clears building pieces, stations and chests. A chest owned by another connected player waits until that owner releases it.
+World cleanup clears dropped items, chest contents and stands, and the marks on building pieces, stations and chests. It runs when a world loads, right away when Clear cheat marks is switched on, every World round minutes, and keeps going while you play if Keep clearing while playing is on. On a server, world cleanup runs on the server. A chest owned by another connected player waits until that owner releases it.
 
 Every few minutes the whole world is gone through again, a few objects at a time so the game does not stall. Options on the same page can only report what carries a mark, report impossible items, remove the game's developer items and any items you list, write a log line for every object cleaned and tell players when marks were cleared.
 
@@ -78,6 +80,8 @@ Press F8 and open the Cheats page. Every setting row has a hover tip describing 
 | God mode | Off | Admins | Turns the game's god mode on or off: nothing can hurt you. |
 | Ghost mode | Off | Admins | Turns the game's ghost mode on or off: creatures do not notice you. |
 | Fly | Off | Admins | Turns the game's free flight on or off. |
+| Noclip | Off | Admins | Move freely through terrain, rocks, trees, pieces, doors and creatures with the fly controls. |
+| One-hit kill | Off | Admins | Every damaging hit you land on a creature kills it, bosses included. |
 | No build cost | Off | Admins | Building takes no materials. |
 | Wind behind the boat | Off | Admins | While you steer a boat, the wind always blows from behind it. |
 | Cheat flags tab | Off | Admins | Shows active cheat chips under the compass, below its pin-distance line. |
@@ -93,9 +97,8 @@ Press F8 and open the Cheats page. Every setting row has a hover tip describing 
 | Free sneak | On | Admins | Sneaking costs no stamina while it is safe. Advanced. |
 | Free while encumbered | Off | Admins | Carrying too much still leaves these actions free while it is safe. Advanced. |
 | Ignored creatures | empty | Admins | Creatures that do not count as hostile. Use the game's internal creature names with commas between them, such as Boar, Greyling. Advanced. |
-| Clear cheat marks | Off | Admins (fixed) | Clears carried items on load, inventory changes and save, and enables world cleanup. |
+| Clear cheat marks | Off | Admins (fixed) | Clears carried items on load, inventory changes and save, and the world's items, building pieces, stations and chests, starting right away. |
 | Keep clearing while playing | Off | Admins (fixed) | Clears new world marks while playing; carried-item clearing remains active without it. Advanced. |
-| Clear object marks | Off | Admins (fixed) | Also removes the mark from building pieces, stations and chests. Advanced. |
 | World round minutes | 10 | Admins (fixed) | How often the whole world is gone through again, in minutes. 0 turns the rounds off (0 to 120). Advanced. |
 | Report only | Off | Admins (fixed) | Only counts and reports what carries a mark. Nothing is changed. Advanced. |
 | Report impossible items | Off | Admins (fixed) | Reports items that cannot be had in normal play, such as a stack or quality above the item's limit. Advanced. |
@@ -109,6 +112,8 @@ Cheat values stay with the player who set them; the cleanup settings use the ser
 ## Known limits
 
 - God mode protects only your own character, and only while you have it on.
+- One-hit kill beats a boss or elite defense that caps hits only when the creature's owner also has Cheats installed; otherwise the raised hit is still very large but a cap can leave the creature alive.
+- Noclip does not rescue you from the gap between dungeon rooms when you leave it there; it lifts you only to free space above.
 - Safe stamina does not cover swimming, blocking, dodging or drawing a bow.
 - Loot multiplier multiplies pickups only. It leaves boss drops, boss trophies, caught fish and gems alone.
 - A stored inventory above 256 KiB is not cleaned by the periodic rounds; it is cleaned when the world loads.

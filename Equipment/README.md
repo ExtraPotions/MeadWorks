@@ -16,14 +16,14 @@ New weapons, shields, trinkets, robes, wands and packs, item rarity with gems an
 - **Hand choices.** Bag right-click, use and hotbar equip keep the native hand rules. A shield replaces the left-hand item and keeps a one-handed main weapon or torch. Bows and two-handed weapons clear both old hands; hammers and pickaxes keep their native hand restrictions. The fist-weapon shield setting keeps its existing exception.
 - **Saved hands.** Dual-wield pairs retain their hand across reloads, sheathing and automatic grave recovery. Ordinary equip actions ignore old hand marks. Death still follows the world's and Inventory's item-retention rules. Manually unequipping an item clears its hand choice. Native controls are unchanged.
 - **Shields with fist weapons.** A shield can be held together with a fist weapon.
-- **Secondary attacks.** A weapon that has no secondary attack borrows one from a similar weapon, for example clubs from maces. Weapons that already have one keep it. Secondary attack stamina scales what the secondary costs, and Secondary cooldown scales the wait between secondary attacks.
+- **Secondary attacks.** A weapon that has no secondary attack borrows one from a similar weapon, for example clubs from maces. With Secondary moves on, Cleaving Arc and Flurry replace their native secondaries. Secondary attack stamina scales most secondary costs. Flurry spends the stamina of one primary swing per strike. Secondary cooldown scales the wait between secondary attacks.
 - **Secondary moves.** Every weapon family has its own move on the secondary attack, with a cooldown. While the move cools down, its key chip beside the weapon name dims and shows the seconds left. No key changes: the move is on the secondary attack.
 
 | Weapon | Move | Cooldown | What it does |
 | --- | --- | --- | --- |
 | Knife | Shadow Lunge | 3 s | A 6 m dash to the crosshair. The first enemy takes double damage. |
-| Sword | Skyward Thrust | 5 s | A 3 m thrust. The first enemy takes 1.5 times damage and light enemies are lifted. |
-| Axe | Cleaving Arc | 5 s | One wide horizontal swing hits every enemy once in a 180° arc within 3 m, for 85% primary damage and 2× stagger. |
+| Sword | Skyward Thrust | 5 s | A rising thrust that throws the first enemy within 3 m into the air for about a second. It cannot act, and your next hit on it deals 1.5 times damage. Heavy enemies and bosses are staggered instead. |
+| Axe | Cleaving Arc | 5 s | One wide horizontal swing hits every enemy once in a 240° arc within 4 m, for 85% primary damage and 2× stagger. |
 | Mace | Launch Slam | 6 s | The first enemy within 2 m takes 1.5 times blunt damage, is staggered and pushed back. |
 | Spear | Skewer Throw | 5 s | A thrown spear that pierces up to 3 enemies. |
 | Atgeir | Whirling Sweep | 6 s | Three sweeps around you, each at 0.6 damage. |
@@ -33,7 +33,8 @@ New weapons, shields, trinkets, robes, wands and packs, item rarity with gems an
 | Bow | Volley | 6 s | Fires up to three equipped arrows at full draw in a tight horizontal fan. Uses one draw's stamina and one arrow per shot. |
 | Crossbow | Bolt Breach | 6 s | The next bolt from a loaded crossbow pierces 2 enemies and staggers them. |
 | Staff | Arcane Surge | 6 s | For 3 s attacks cost no eitr. It covers Dundr. Wands are excluded. |
-| Unarmed and fist weapons | Iron Kick | 4 s | A kick with twice the push, staggering the enemy. |
+| Unarmed (bare hands) | Iron Kick | 4 s | A kick with twice the push, staggering the enemy. |
+| Claws and fist weapons | Flurry | 4 s | Three quick strikes at one enemy in front within 2 m, each for 60% weapon damage. The third staggers. Each costs one primary swing's stamina, and the flurry stops if you run out. |
 | Pickaxe | Fault Strike | 6 s, shorter with Pickaxes skill | The pickaxe swing at twice the stamina and durability, then a 5 m crack in the ground that damages enemies, rocks, ore and trees along it for 1.5 s. It never hits players, tamed animals or anything you or anyone built. |
 
 Moves hit enemies you can see, never through terrain or walls, and only hit another player when both are in PvP. Both players need Equipment for the moves to act. With Secondary moves off, secondaries keep the game's own behavior with the name Secondary Strike.
@@ -44,9 +45,9 @@ Moves hit enemies you can see, never through terrain or walls, and only hit anot
 - **Summons.** Blood Magic summons can have a preset (Balanced or Hardcore), extra levels, a different lifetime and limit, extra damage by Blood Magic skill and a shield. All are Advanced settings. Damage and shields are fixed when a creature is summoned, so a change affects new summons only.
 
 ### Gear
-- **Item rarity.** Most fresh crafts have no rarity. The chance of a tier is 1%, plus 0.5 percentage points per native boss defeated in this world, up to 4.5%. Personal boss history and guardian powers do not count. A successful roll can be Common. Eikthyr and The Elder unlock Uncommon; Bonemass and Moder unlock Rare; Yagluth and The Queen unlock Legendary; Fader unlocks Mythic. Earlier pairs must also be defeated. Each higher tier is half as likely, starting with Common. Native quality upgrades keep the existing rarity. The Enchant tab's Upgrade raises rarity within the same world cap. Weapons, shields, armor, capes, packs, trinkets and tools use the same rules, including custom MeadWorks gear. Creature rarity drops remain Legendary from elites, Mythic from bosses and Ascendant from end-game bosses. Ascendant stays drop-only and owner-bound.
+- **Item rarity.** Most fresh crafts have no rarity. Torches and other expendable items cannot gain rarity or be enchanted. Crafting starts at 3%, plus 1.5 percentage points per native boss defeated in this world, up to 15%. World chests use the same chance. Personal boss history and guardian powers do not count. A successful roll can be Common. Eikthyr and The Elder unlock Uncommon; Bonemass and Moder unlock Rare; Yagluth and The Queen unlock Legendary; Fader unlocks Mythic. Earlier pairs must also be defeated. Each higher tier is half as likely, starting with Common. Native quality upgrades keep the existing rarity. The Enchant tab's Ascend raises rarity within the same world cap. Quality stars still come only from the game's Upgrade tab and Forge of Potential. Weapons, shields, armor, capes, packs, trinkets and tools use the same rules, including custom MeadWorks gear. Native creatures can drop rarity gear from the biome where they die, starting at 0.5% and gaining 0.5 percentage points per boss, up to 4.5%. One star doubles the chance and two stars triple it. Tamed creatures, summons, player-raised creatures and bosses are excluded from this roll. Creature and chest rolls follow the same boss steps through Rare. Elites also roll their 5% Legendary drop. Bosses roll a 17% Mythic drop and end-game bosses roll a 100% Ascendant drop. Ascendant stays drop-only and owner-bound. Random gear uses the lower of the death or chest biome and the biome unlocked by consecutive world boss defeats. Meadows starts unlocked, Eikthyr unlocks Black Forest, and each boss through Fader unlocks the next biome. An empty gear pool tries lower biomes. Bosses use their own biome, and only the final Frozen King phase rolls gear or gems. Gear needs both its recipe materials and station tier, including any specific boss keys. Deep North includes Frost Foundry gear and Gold variants. The fishing hat, Dyrnwyn and entitlement items stay out of random pools. Random rarity gear excludes tools.
 
-| Tier | World bosses required for crafting / Upgrade | Craft weight when unlocked | Damage, armor and block | Durability | Bonuses |
+| Tier | World bosses required for crafting / Ascend | Craft weight when unlocked | Damage, armor and block | Durability | Bonuses |
 | --- | --- | --- | --- | --- | --- |
 | Common | None | 1 | x1 | x1 | 0 |
 | Uncommon | Eikthyr + The Elder | 0.5 | x1.05 | x1.1 | 1 |
@@ -55,11 +56,11 @@ Moves hit enemies you can see, never through terrain or walls, and only hit anot
 | Mythic | Also Fader | 0.0625 | x1.5 | x2.5 | 3 |
 | Ascendant | End-game boss drops only | 0 | x1.7 | x3 | 3 |
 
-- **Rarity frames, loot glow, pillars and labels.** Bag, hotbar, equipment and dedicated item slots show a frame in the tier color, including after an item is equipped or moved. Dropped gear glows on the ground, at most 64 drops at once. At most four drops cast light, within 20 meters, and at most eight floating names show at once. Rare and better stand under a pillar of light, and Legendary and better show a floating name in the HUD font, in plain white.
+- **Rarity frames, loot glow, pillars and labels.** Bag, hotbar, equipment and dedicated item slots show a border in the tier color (nothing is tinted over the icon), including after an item is equipped or moved. Dropped gear glows on the ground, at most 64 drops at once. At most four drops cast light, within 20 meters, and at most eight floating names show at once. Rare and better stand under a pillar of light, and Legendary and better show a floating name in the HUD font, in plain white.
 - **Quality upgrades.** Native quality upgrades preserve rarity, bonuses, sockets and crafter data.
-- **Bonuses.** Gear rolls bonuses automatically when it gains rarity from crafting, creature drops, chest loot or Upgrade. The catalog is listed under Inscriptions below. Each class of gear rolls from its own pool: armor, shields, bows and general tools have pools of their own. Existing bonus rolls stay unchanged.
-- **Gems and sockets.** Gear with rarity has sockets for twelve kinds of gem. Elite creatures and bosses still drop gems. Taking a gem out returns it with its rarity; the bag needs a free cell. Dots on an item's icon show its sockets. Three matching gems fuse into one better gem.
-- **Enchant.** The crafting window's Enchant tab has five actions: Socket, Cut socket, Fuse gems, Reroll and Upgrade. It needs Crafting and a usable crafting station.
+- **Bonuses.** Gear rolls bonuses automatically when it gains rarity from crafting, creature drops, chest loot or Ascend. The catalog is listed under Inscriptions below. Each class of gear rolls from its own pool: armor, shields, bows and general tools have pools of their own. Existing bonus rolls stay unchanged.
+- **Gems and sockets.** Gear with rarity has sockets for twelve kinds of gem. Creatures and world chests can drop gems. Taking a gem out returns it with its rarity; the bag needs a free cell. Beads just above an item's durability bar show its sockets: a set gem in its color, an empty socket as a dark hole with a light rim. Three matching gems fuse into one better gem.
+- **Enchant.** The crafting window's Enchant tab has five actions: Socket, Cut socket, Fuse gems, Reroll and Ascend. It needs Crafting and a usable crafting station.
 - **Trinkets.** Eight crafted trinkets, worn in a slot of their own: Hearth ring, Ember ring, Seafarer band, Wolfsbane ring, Miner charm, Forager charm, Traveler knot and Wardstone pendant. With Inventory the Character tab has two trinket slots, so two different trinkets can be worn at once.
 - **Packs.** Enable Backpacks on the Inventory page (Off by default). Hide, Troll-hide and Lox-hide packs add carry weight and, with Inventory, rows to the bag. They are worn on your back, flush against your body and armor, with a cape hanging clear of them, and other players see them.
 - **Compare tooltip.** Tooltips of weapons, shields, armor, ammo and trinkets become a flat card. When you wear an item in the same slot, a second card beside it shows that item and the lines that differ, green where the hovered item is better and red where it is worse. With nothing worn in that slot, the card shows the best item of the same kind in your bag (axe with axe, bow with bow, arrows with arrows, a helmet with a helmet; highest tier, then highest quality). Its heading says whether the item is worn or in your bag. It works wherever an item is hovered: bag, chests, carts, ships and the hotbar, and in the crafting window's recipe detail when Crafting is installed. On by default. Interactive item cards show mouse or controller action hints; food shows Eat, and unsupported actions are omitted.
@@ -75,9 +76,9 @@ Wands pair with a focus or shield. Reading a scroll teaches its spell and confir
 - **Gear in water.** Your weapons and tools stay in your hands while you swim.
 
 ### World chest loot
-World loot chests in dungeons, camps and villages have a 10% chance per fill to add one MeadWorks item at quality 1. Player-built containers are excluded. The chest's biome selects the material tier: flint/wood/leather in Meadows, bronze/troll/copper in Black Forest, iron in Swamp, silver/wolf in Mountain, blackmetal/linen in Plains, carapace/eitr in Mistlands, flametal/asksvin in Ashlands, and the next tier in Deep North when available. Each item's live recipe materials determine its tier; station and level are the fallback when no material is recognized. Boss materials, trophies, uncraftable drops and items with rarity or owner binding are excluded.
+World loot chests in dungeons, camps and villages have a 10% chance per fill to add one MeadWorks item at quality 1. Player-built containers are excluded. The chest uses the lower of its biome and the biome unlocked by the world's consecutive boss defeats. Both the recipe materials and the required station level count toward the item's tier. Boss rewards, trophies, uncraftable drops and items with rarity or owner binding are excluded.
 
-Qualifying chest gear uses the same world-based rarity chance and tier weights as a fresh craft, and a tier grant rolls its bonuses. The chest owner rolls once through the game's default loot fill, including Dungeons refills. Chest identity and a saved fill counter determine the roll. No matching item or no room means no bonus; native loot takes priority. On a server, the server's percentage applies to every owner. Solo players, the host and admins can change it.
+The MeadWorks item roll uses the saved fill counter, including Dungeons refills, and its items have no rarity. The first player to open a world chest also rolls once for a separate rarity weapon or armor piece from the same capped biome or a lower biome if its pool is empty. The chest saves that roll even if it misses, so reopening or refilling cannot add another rarity item. Native loot takes priority when a chest is full. On a server, the server's chances apply. Solo players, the host and admins can change them.
 
 ## Settings
 
@@ -85,11 +86,11 @@ Press F8 and open the Equipment page. Every setting row has a hover tip describi
 
 | Name | Default | Who can change | What it does |
 | --- | --- | --- | --- |
-| MeadWorks items in chests % | 10 | Admins | Chance per world loot chest fill for one custom item of the biome's material tier (0 to 100). 0 disables it. Includes Dungeons refills. |
+| MeadWorks items in chests % | 10 | Admins | Chance per world loot chest fill for one custom item of the world's unlocked biome tier or the chest biome, whichever is lower (0 to 100). 0 disables it. Includes Dungeons refills. |
 | Dual wield | On | Admins | A second one-handed weapon can be held in the off hand. |
 | Shields with fist weapons | On | Admins | A shield can be held together with a fist weapon. |
 | Secondary attacks | On | Admins | A weapon without a secondary attack gets one borrowed from a similar weapon. |
-| Secondary attack stamina | 1 | Admins | Multiplies the stamina a secondary attack costs. 1 is normal (0.25 to 2). Advanced. |
+| Secondary attack stamina | 1 | Admins | Multiplies the stamina cost of secondary attacks other than Flurry. 1 is normal (0.25 to 2). Advanced. |
 | Secondary cooldown | 1 | Admins | Multiplies the wait between secondary attacks. 1 is normal and 0 removes it (0 to 2). Advanced. |
 | Secondary moves | On | Admins | Weapons have their own special moves on the secondary attack. |
 | Quickstep | Off | Admins | Dodging becomes a quick step: 2.5 meters for 70% of the stamina, and you are safe only during the step. Advanced. |
@@ -106,8 +107,10 @@ Press F8 and open the Equipment page. Every setting row has a hover tip describi
 | Summon damage bonus % at skill 100 | 0 | Admins | Extra summon damage at Blood Magic 100, added to the preset's bonus (0 to 100). Lower skill gives less. Advanced. |
 | Summon shield % of health | 0 | Admins | Extra shield for new summons, in percent of their health, added to the preset's shield (0 to 100). Advanced. |
 | Item rarity | On | Admins | Gear can carry a rarity tier that raises its stats. Most fresh crafts have none; boss defeats improve their chance and available tiers. |
-| Craft rarity chance | 1% | Admins | Base chance that freshly crafted gear has any rarity (0 to 100%). Upgrades keep their existing rarity. Advanced. |
-| Craft rarity per boss | 0.5% | Admins | Percentage points added per boss defeated in the world, counting each of the seven bosses once (0 to 100). Station level has no effect. Advanced. |
+| Craft rarity chance | 3% | Admins | Base chance for a fresh craft or a world chest to gain rarity (0 to 100%). Advanced. |
+| Craft rarity per boss | 1.5% | Admins | Percentage points added to crafting and world-chest rarity per world boss. The Frozen King counts on its final phase. Advanced. |
+| Creature rarity chance | 0.5% | Admins | Base chance for an eligible creature to drop rarity gear (0 to 100%). One star doubles it and two stars triple it. Advanced. |
+| Creature rarity per boss | 0.5% | Admins | Percentage points added to creature rarity per world boss before the star multiplier. Advanced. |
 | Uncommon damage, armor and block | 1.05 | Admins | Tier multiplier (1 to 3). Advanced. |
 | Rare damage, armor and block | 1.1 | Admins | Tier multiplier (1 to 3). Advanced. |
 | Legendary damage, armor and block | 1.35 | Admins | Tier multiplier (1 to 3). Advanced. |
@@ -118,14 +121,16 @@ Press F8 and open the Equipment page. Every setting row has a hover tip describi
 | Legendary durability | 2 | Admins | Tier multiplier (1 to 4). Advanced. |
 | Mythic durability | 2.5 | Admins | Tier multiplier (1 to 4). Advanced. |
 | Ascendant durability | 3 | Admins | Tier multiplier (1 to 4). Advanced. |
-| Elite drop chance % | 5 | Admins | The chance that an elite creature drops a Legendary weapon or armor piece from its biome, in percent. Advanced. |
+| Elite drop chance % | 5 | Admins | The chance that an elite creature drops Legendary gear, including utility gear and trinkets, from its boss-capped biome pool. Advanced. |
 | Boss drop chance % | 17 | Admins | The chance that a boss drops a Mythic piece, in percent. Advanced. |
 | End-game boss drop chance % | 100 | Admins | The chance that an end-game boss drops an Ascendant piece, in percent. Advanced. |
-| End-game bosses | Fader, FrozenKing, FrozenKing_p3 | Admins | The bosses that count as end-game, as a list of their names with commas between them. Advanced. |
+| End-game bosses | Fader, FrozenKing, FrozenKing_p3 | Admins | The bosses that count as end-game, as a list of their names with commas between them. The Frozen King rolls on its final phase only. Advanced. |
 | Rarity frames | On | Everyone | Item slots show a frame in the color of the item's rarity. |
 | Loot glow | On | Everyone | Dropped gear with a rarity glows softly on the ground. Rare and better drops stand under a pillar of light, and Legendary and better drops show a floating name. |
 | Bonuses | On | Admins | Gear gains rolled bonuses with rarity. Armor and shields share the ring pool. |
 | Gems | On | Admins | Rarity gear has sockets. Gems can be returned or fused at a station. |
+| Gem creature drop chance % | 1 | Admins | Gem chance for eligible non-elite creatures. One star doubles it and two stars triple it. Advanced. |
+| Gem chest chance % | 5 | Admins | Gem chance on the first open of an eligible world chest. Advanced. |
 | Gem elite drop chance % | 8 | Admins | The chance that an elite creature drops a gem, in percent. Advanced. |
 | Gem boss drop chance % | 20 | Admins | The chance that a boss drops a gem, in percent. Advanced. |
 | Trinkets | On | Admins | Adds trinkets, worn in a slot of their own. |
@@ -277,7 +282,7 @@ Arrows are crafted 20 at a time and stack to 100.
 
 | Arrow | Effect | Recipe |
 | --- | --- | --- |
-| Ember | A fire arrow whose burn also spreads to one enemy within 3 m. | Fire Arrow 20, plus the materials from the Fire Arrow recipe |
+| Ember | Leaves a burning patch with a 2 m radius for 4 seconds. Creatures in it take Burning up to once per second. A creature hit also spreads fire to one enemy within 3 m. | Fire Arrow 20, plus the materials from the Fire Arrow recipe |
 | Thunder | Lightning damage that jumps to up to 2 more enemies within 6 m, each jump at 60% of the one before. | Frost Arrow 20, Wood 8, Feathers 2, Obsidian 1 |
 | Bramble | Roots the enemy it hits for 2 s and slows other enemies within 3 m to 60% speed for 3 s. | Poison Arrow 20, Wood 8, Feathers 2, Thistle 1 |
 | Whistling | 8 pierce damage and eight times the stagger. It wakes non-tame creatures within 15 m and draws them to where it lands. | Flint Arrow 20, Wood 8, Feathers 2, Bone Fragments 1 |
@@ -297,7 +302,7 @@ Eight crafted trinkets, worn in a slot of their own, one quality each. With Inve
 | Wardstone pendant | Block power of the item you hold +10%. | Iron 3, Draugr Trophy 1, Bronze 1 |
 
 ### Gems
-Sockets sit in weapons, bows, shields, armor, capes, packs, trinkets and tools, including MeadWorks gear. A Common item has none, an Uncommon one, a Rare or Legendary two, and a Mythic or Ascendant three. Gems are socketed and returned intact on the Enchant tab. Taking a gem out needs a free bag cell. Gems drop from elite creatures (8% by default) and bosses (20%). The gem is chosen at random from the twelve and has its own rarity. The values below are for a Rare gem; an Uncommon gem gives 60% of them and a Legendary gem 160%. What a gem does depends on what it sits in.
+Sockets sit in weapons, bows, shields, armor, capes, packs, trinkets and tools, including MeadWorks gear. Common starts with no sockets, Uncommon with one, Rare with two, Legendary with three, Mythic with four, and Ascendant with five. Gear gains any missing tier sockets on load and keeps its gems. Gems are socketed and returned intact on the Enchant tab. Taking a gem out needs a free bag cell. Eligible normal creatures have a 1% gem chance, doubled or tripled by stars. Elites use their own 8% chance and bosses use 20%. Each eligible world chest has a separate 5% gem chance on first opening. The gem is chosen at random from the twelve. Normal creatures, elites and chests roll 50% Uncommon, 35% Rare and 15% Legendary. Bosses roll 35% Rare and 65% Legendary. Gem rarity has its own table at every world boss step. Splintering copies, raised Headsman fighters and the earlier Frozen King phases grant no gems. The values below are for a Rare gem; an Uncommon gem gives 60% of them and a Legendary gem 160%. What a gem does depends on what it sits in.
 
 | Gem | In a weapon | In armor | In a shield |
 | --- | --- | --- | --- |
@@ -315,20 +320,20 @@ Sockets sit in weapons, bows, shields, armor, capes, packs, trinkets and tools, 
 | Opal | +2 damage of each element | +5% all resistances | +5% block force and +5% armor |
 
 ### Enchant
-The Enchant tab has five actions: Socket, Cut socket, Fuse gems, Reroll and Upgrade. Every action works at any crafting station you can use, within that station's own reach, so a wider Station reach in Crafting counts. A ward does not stop it, as with the game's own stations. Paid changes show their costs and odds and require a second press to confirm. Reroll and Upgrade use only vanilla materials. Number the rarity tiers Common 0 through Ascendant 5 for the costs below.
+The Enchant tab has five actions: Socket, Cut socket, Fuse gems, Reroll and Ascend. Every action works at any crafting station you can use, within that station's own reach, so a wider Station reach in Crafting counts. A ward does not stop it, as with the game's own stations. Paid changes show the outcome, cost and odds and require a second press to confirm. The item and compare tooltips and the Enchant action detail show the name and actual scaled effect of each inscription. Socket lines show each gem’s effect at its own rarity. Reroll and Ascend use only vanilla materials. Number the rarity tiers Common 0 through Ascendant 5 for the costs below. Torches and other expendable items cannot gain rarity or be enchanted. Recycle an already-enchanted item to recover its socketed gems.
 
 | Action | Result and cost |
 | --- | --- |
 | Socket | Put a chosen gem in an empty socket or take it out with its rarity preserved. No material fee. Taking out needs a free bag cell. |
-| Cut socket | Inside Socket: gear that has a rarity record and no socket gets one empty socket. Costs 8 Crystal. Gear that already has a socket or a gem does not offer it. |
+| Cut socket | Inside Socket, add one empty socket above the item's rarity allowance, once per item. Costs 8 Crystal at Common, plus 4 per tier, up to 28 at Ascendant. Ascend keeps the extra socket. |
 | Fuse gems | Three gems of the same kind and rarity become one of the next rarity, with 100% success. Uncommon -> Rare -> Legendary; Legendary cannot fuse further. No material fee. |
 | Reroll | Replace one known bonus with a different eligible bonus, excluding bonuses already on the item. All candidates have equal odds, shown before confirmation. Costs 3 + 2 x (tier + 1) Crystal (5 on Common up to 13 on Mythic), plus 2 Silver on Rare gear or 2 Black metal on Legendary and better. Picking a Group (Offense, Defense or Utility) also costs 1 + tier trophies, never boss trophies. Other bonuses and gems stay unchanged. |
-| Upgrade | Raise rarity one step with 100% success, within the world's crafting cap. Costs 6 x destination tier Crystal: 6 to Uncommon, 12 and 8 Silver to Rare, 18 and 9 Black metal to Legendary, 24 and 12 Black metal to Mythic. New bonus slots roll automatically; existing bonuses and gems remain. No Ascendant upgrade. |
+| Ascend | Raise rarity one step with 100% success, within the world's crafting cap. Costs 6 x destination tier Crystal: 6 to Uncommon, 12 and 8 Silver to Rare, 18 and 9 Black metal to Legendary, 24 and 12 Black metal to Mythic. New bonus slots roll automatically; existing bonuses and gems remain. Ascend stops at Mythic. |
 
-Reroll and Upgrade use the existing station gates: Workbench or Forge for Uncommon/Rare, Workbench level 3 or Forge for Legendary, and Forge for Mythic or Ascendant rerolls. At the world cap, Upgrade is disabled and names the next missing boss pair, or Fader.
+Reroll and Ascend use the existing station gates: Workbench or Forge for Uncommon/Rare, Workbench level 3 or Forge for Legendary, and Forge for Mythic or Ascendant rerolls. At the world cap, Ascend is disabled and names the next missing boss pair, or Fader.
 
 ### Retired runes
-Runes, their recipes, etched effects and Rune Dust are removed. Loading old inventories converts loose rune items and dust into Coal, one unit per unit, with a log line. Old etch metadata is removed with a log line. Existing inscriptions, their stored values, rarity and socketed gems remain intact; empty bonus slots on old rarity gear roll when loaded. The retired Runes setting is removed from old config files.
+Runes, their recipes, etched effects and Rune Dust are removed. Loading old inventories converts loose rune items and dust into Coal, one unit per unit, with a log line. Old etch metadata is removed with a log line. Existing inscriptions, their stored values, rarity and socketed gems remain intact; empty bonus slots on eligible rarity gear roll when loaded. The retired Runes setting is removed from old config files.
 
 ### Inscriptions
 Inscription effects grow with the item's rarity, from x1 on Common to x2 on Ascendant, and new bonuses have a fixed value factor of 1. Existing per-slot values from older saves are preserved. An item has 0 slots when Common, 1 when Uncommon, 2 when Rare or Legendary and 3 when Mythic or Ascendant. Bonuses are rolled automatically, never hand-picked. Active inscriptions are spread over eleven classes of gear: each class rolls the bonuses made for it and the ones listed for it from other classes. Gear keeps a bonus it already holds even when its class no longer rolls it; a Reroll draws from the class's current pool.
@@ -339,7 +344,7 @@ Each bonus has its own cap on what everything worn and held adds up to. One bonu
 
 **Backpack** (the three packs and anything named pack or bag): Deep Pockets (+40 carry weight), Featherstitch (contents weigh 15% less), Packhorse (slowdown starts at 120% of carry weight), Cushioned Straps (equip and unequip 30% faster), Ironbound Frame (frost damage -15%), Quiver Sling (+3 armor), Counterweight (20% chance of an extra item when foraging), Camp Roll (ore and other items that cannot be teleported weigh 25% less), Storm Tarp (run stamina -8%), Oarsman's Harness (swim speed +15%), Healer's Pouch (mead and potion heals +15%), Surveyor's Pack (map reveal radius +50%), Steadfast Spine (stagger time -25%), Hornsman's Sling (sail speed +6% in any wind), Beastmaster's Satchel (tamed creatures within 20 m deal +12% damage), Trail Rations (eating restores 8 health at once, once per 10 s), Cart Harness (cart slowdown -50%).
 
-**Ring** (the eight trinkets and anything classed as a ring or band): Bloodbond (heal 2% on a kill), Quickhand (attack stamina -8%), Fortune (raises the elite gear drop chance to at least 10% for the highest-damage contributor), Stoneheart (+20 max health), Windlung (+25 max stamina), Sharpshooter's Knot (ranged damage +8%), Ironknuckle (unarmed damage +30%), Mender's Band (health regeneration +0.4 a second), Steady Breath (stamina regeneration +12%), Staggerer (stagger power +15%), Counterflow (+20% damage for 3 s after a parry), Panic Band (+10% move speed for 4 s after a hit of 20 or more), Skywatcher (severe storm warning 90 s ahead), Nightsight (night vision +25%), Wardstone (absorbs up to 25 damage from the first damaging hit every 30 s, after blocking and resistances), Studious Band (skill gain +10%), Vanguard's Band (party members within 15 m deal +4% damage), Magpie's Eye (10% chance that gear dropped by your kills is one rarity higher, up to Mythic).
+**Ring** (the eight trinkets and anything classed as a ring or band): Bloodbond (heal 2% on a kill), Quickhand (attack stamina -8%), Fortune (raises the elite gear drop chance to at least 10% for the highest-damage contributor), Stoneheart (+20 max health), Windlung (+25 max stamina), Sharpshooter's Knot (ranged damage +8%), Ironknuckle (unarmed damage +30%), Mender's Band (health regeneration +0.4 a second), Steady Breath (stamina regeneration +12%), Staggerer (stagger power +15%), Counterflow (+20% damage for 3 s after a parry), Panic Band (+10% move speed for 4 s after a hit of 20 or more), Skywatcher (severe storm warning 90 s ahead), Nightsight (night vision +25%), Wardstone (absorbs up to 25 damage from the first damaging hit every 30 s, after blocking and resistances), Studious Band (skill gain +10%), Vanguard's Band (party members within 15 m deal +4% damage), Magpie's Eye (10% chance to raise the rarity tier of gear from your kills or the world chest you open first. Normal creature and chest gear use the world cap through Rare. Elite drops can reach Mythic).
 
 **Hammer**: Steady Hand (piece cost -10%), Long Reach (build range +4 m), Quick Raise (placement animation 30% shorter), Keystone (support +15%), Fine Rotation (rotation step 5 degrees), Strain Sight (stress colors out to 20 m), Weathered Oak (weather damage -25%), Patch Work (repair also heals pieces within 2 m), Swift Dismantle (removal time -40%), Slow Burn (fireplace fuel burn -15%), Cozy Hand (furniture comfort +25%), Line Layer (a piece every 0.3 s, up to 10 per hold), Mirror Plan (also places the mirrored twin, costs both), Ghost Grid (1 m grid overlay), Lantern Ghost (lights 6 m around the ghost at night), Height Dial (nudge the ghost up or down), Quiet Hammer (build noise -70%).
 

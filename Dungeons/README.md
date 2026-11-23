@@ -1,6 +1,6 @@
 # MeadWorks Dungeons
 
-Burial chambers and sunken crypts reset to larger layouts. Loot chests refill and creatures return at other eligible locations after configurable delays. Configure the module on the Dungeons page of the MeadWorks menu (F8). Needs Meadworks: Core at exactly the same version.
+Burial chambers, sunken crypts, infested mines, and Winding Tunnels reset to larger layouts. Loot chests refill and creatures return at other eligible locations after configurable delays. Configure the module on the Dungeons page of the MeadWorks menu (F8). Needs Meadworks: Core at exactly the same version.
 
 ![Refill and respawn settings](https://raw.githubusercontent.com/ExtraPotions/MeadWorks/main/assets/Dungeons/01-refill-respawn-settings.png)
 ![Loot chest](https://raw.githubusercontent.com/ExtraPotions/MeadWorks/main/assets/Dungeons/02-loot-chest.png)
@@ -12,13 +12,17 @@ Burial chambers and sunken crypts reset to larger layouts. Loot chests refill an
 
 ### Dungeon layouts reset
 
-Black Forest burial chambers and Swamp sunken crypts keep their current layout until their first reset. Hover over the exterior entrance to see the remaining in-game days or hours. Resets replace the interior with a different, larger set of rooms drawn from the game's own room pool. The entrance, exit and any exterior gate stay in place.
+Black Forest burial chambers, Swamp sunken crypts, Mistlands infested mines, and the Deep North's Winding Tunnels keep their current layout until their first reset. Hover over the exterior entrance to see the remaining in-game days or hours. Resets replace the interior with a different, larger set of rooms drawn from the game's own room pool. The entrance, exit and any exterior gate stay in place.
 
 When the countdown ends, the interior waits while a player is inside, has reserved an entry, or disconnected inside and has yet to be seen outside. If the server could not identify the disconnected character, that hold lasts one full reset interval from the disconnect. Player-built pieces, graves, tamed creatures and loose items the game cannot yet despawn also hold a reset. A player who returns to a stale spawn with no dungeon room nearby is teleported to the entrance or their spawn point.
 
-Putting an item into a dungeon loot chest marks its contents even when layout resets are off. The next reset carries over all non-empty loot chests owned by the old layout if it predates enrollment, resets were turned off, or the server restarted since that layout was generated. Find carried inventories in ordinary wooden chests beside the new entrance. A reset waits if the source inventory cannot be verified or the replacement entrance room lacks space for the carry chests.
+Putting an item into a dungeon loot chest marks its contents even when layout resets are off. Equipment's first-open gear and gem bonuses count as generated loot. The next reset carries over all non-empty loot chests owned by the old layout if it predates enrollment, resets were turned off, or the server restarted since that layout was generated. Find carried inventories in ordinary wooden chests beside the new entrance. A reset waits if the source inventory cannot be verified or the replacement entrance room lacks space for the carry chests.
 
-Reset layouts renew their loot and creatures together. The separate refill and respawn timers apply everywhere else, including camps, villages, troll caves, frost caves, infested mines, Hildir locations, boss and quest areas, and Ashlands and Deep North interiors. Turning layout resets off lets the ordinary timers apply in burial chambers and sunken crypts again.
+Reset layouts renew their loot and creatures together. The separate refill and respawn timers still apply at eligible camps, villages, and hand-built interiors such as troll caves, bear caves, and the Ashlands' Putrid Holes. Hildir's quest dungeons, boss lairs, and Mörkhalla keep their native layouts to preserve their special encounters. Turning layout resets off restores the ordinary timers in eligible generated dungeons.
+
+### Reset all dungeons
+
+With layout resets turned on, a solo player, host, or authorized server admin can choose **Reset all dungeons** and confirm the performance warning. The server marks every eligible generated dungeon in the current world due and rebuilds them one at a time. The usual safety holds still apply. Progress and the final reset and waiting counts are shown to the person who started it. Cancel lets the current reset finish and leaves the rest due for their ordinary checks.
 
 ### Chests refill
 Loot chests the world placed in dungeons and camps fill again with their own loot after enough in-game day boundaries have passed since they were emptied. The count starts when the chest is emptied, also when the chest stays loaded and nobody opens it. Chests that players built, chests in use and chests that still hold items are never touched. Dungeon chests also wait while any player is inside that same dungeon, even in a distant room. Leaving does not restart the refill delay.
@@ -42,8 +46,9 @@ Press F8 and open the Dungeons page. Every setting row has a hover tip describin
 
 | Name | Default | Default permission | What it does |
 | --- | --- | --- | --- |
-| Reset dungeon layouts | On | Admins | Eligible burial chambers and sunken crypts get a larger new layout after the wait once the interior is clear. |
-| Dungeon reset days | 10 | Admins | How many in-game days a dungeon waits after it is first tracked or last resets (1 to 30). |
+| Reset dungeon layouts | On | Admins | Eligible generated dungeons get a larger new layout after the wait once the interior is clear. |
+| Reset all dungeons | — | Admins | Marks eligible generated dungeons due and rebuilds them in turn after confirmation. |
+| Dungeon reset days | 10 | Admins | How many in-game days an eligible dungeon waits after enrollment or its last layout reset (1 to 30). |
 | Refill loot chests | On | Admins only | World loot chests refill after the wait; dungeon chests also wait until nobody is inside that same dungeon. |
 | Refill after days | 10 | Admins only | How many in-game day boundaries an emptied chest waits before it fills again (1 to 30). |
 | Respawn camps | On | Admins only | Camp and village creatures come back after the camp is next seen empty, only with no player-built piece nearby, no player within 20 m, and the game's own spawn conditions. |
@@ -52,11 +57,12 @@ Press F8 and open the Dungeons page. Every setting row has a hover tip describin
 | Dungeon respawn days | 10 | Admins only | How many in-game day boundaries a dungeon waits after it is next seen empty (1 to 30). |
 | Keep clear of bases (m) | 40 | Admins only | Advanced. Creatures do not come back this near a player-built piece or a player base, in meters (10 to 100). |
 
-MeadWorks syncs all of these values from the server. The host or an authorized admin can set the layout reset rows to Admins or Everyone in game. Refill and respawn rows are reserved for the host and authorized admins. Solo players can change every row.
+MeadWorks syncs these settings from the server. The host or an authorized admin can set the layout reset switch and interval to Admins or Everyone in game. Reset all dungeons is reserved for the host and authorized admins. Refill and respawn rows are reserved for the host and authorized admins. Solo players can change every row.
 
 ## Known limits
 
 - If the game cannot generate a valid, larger replacement within its own bounds, the dungeon keeps its layout and tries again at the next day check.
+- Frost caves keep their original layout: the game often leaves their required shrine rooms out, and the replacement rarely comes out larger.
 - If the server cannot verify a layout switch, the entrance shows “Reset paused.” The hold applies to that dungeon.
 - Old auto-destroy drops can retire with an unloaded layout if their saved age and loose-item state allow it. A loose drop holding an unloaded layout shows “Resets when empty.”
 - Only creatures that a location placed once come back. Spawners that already respawn on their own are not changed.
