@@ -14,7 +14,7 @@ Burial chambers, sunken crypts, frost caves, infested mines, Winding Tunnels, th
 
 Black Forest burial chambers, Swamp sunken crypts, Mountain frost caves, Mistlands infested mines, the Deep North's Winding Tunnels, and Hildir's Howling Cavern and Smouldering Tomb are larger than the game builds them: more rooms, and more floors where the room set has stairs or drops. A burial chamber aims for about 36 rooms where the game stops near 21. A dungeon first built while MeadWorks is installed is larger from the first visit. One built earlier keeps its layout until its first reset. Hover over the exterior entrance to see the remaining in-game days or hours. Resets replace the interior with a different large set of rooms drawn from the game's own room pool. The entrance, exit and any exterior gate stay in place.
 
-Each layout stays inside the game's own dungeon box for its map zone and uses the game's own room placement, so the saved layout loads without MeadWorks. A first layout that dead-ends well short of its size is rebuilt once right away, while nobody is inside. The mini-boss of the Howling Cavern or the Smouldering Tomb comes back with each new layout. Its reward chest for Hildir drops once per dungeon, on the first kill in that world, and one per kill; the same holds for the Sealed Tower. A reward chest left on the floor keeps its dungeon from resetting until it is picked up.
+Each layout stays inside the game's own dungeon box for its map zone and uses the game's own room placement, so the saved layout loads without MeadWorks. A first layout that dead-ends well short of its size is due for an early reset once the dungeon is clear and a larger layout can be found. The mini-boss of the Howling Cavern or the Smouldering Tomb comes back with each new layout. Its reward chest for Hildir drops once per dungeon, on the first kill in that world, and one per kill; the same holds for the Sealed Tower. A reward chest left on the floor keeps its dungeon from resetting until it is picked up.
 
 When the countdown ends, the interior waits while a player is inside, has reserved an entry, or disconnected inside and has yet to be seen outside. If the server could not identify the disconnected character, that hold lasts one full reset interval from the disconnect. Player-built pieces, graves, tamed creatures and loose items the game cannot yet despawn also hold a reset. A player who returns to a stale spawn with no dungeon room nearby is teleported to the entrance or their spawn point.
 
@@ -64,7 +64,7 @@ MeadWorks syncs these settings from the server. The host or an authorized admin 
 ## Known limits
 
 - A reset waits while a loot chest still holds extras on an old overflow page; they come back when a player loads that chest.
-- A reset never leaves a dungeon with fewer rooms than it has; when no layout that large is found, the dungeon keeps its layout and tries again at the next day check.
+- Each reset picks a new random layout larger than the game's own. The number of rooms can vary from reset to reset.
 - A reset tries up to four layouts. If none is valid and larger than the game's own, the dungeon keeps its layout and tries again at the next day check.
 - Size depends on where the entrance sits in its map zone: a dungeon near the zone edge has less room and can come out smaller than its goal.
 - Sunken crypts gain the least. Their rooms are 12 m wide and cannot stack, so one map zone holds about 20 of them; MeadWorks gives the game's own placement four times its steps and keeps the largest of four layouts.

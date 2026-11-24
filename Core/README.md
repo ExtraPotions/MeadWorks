@@ -78,6 +78,7 @@ The Compendium is a tab beside the inventory and crafting tabs. It lists what yo
 
 ### Saves
 - Items MeadWorks could not hand you right away are kept with your character for that world and given to you later, also after you leave and come back.
+- With Equipment, solo players and hosts can hang MeadWorks items that have a vanilla fallback when stand saving is available. Guests and dedicated-server clients are refused on both stand types.
 - **Shorter save pauses.** Map data is saved by copying the explored grids in bulk, and the bytes are checked against the game's own. If they differ, for example after a game update, the bulk copy is switched off for the rest of the session.
 
 ## Settings
