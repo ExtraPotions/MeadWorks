@@ -2,7 +2,7 @@
 
 A suite of Valheim mods built on one shared Core. Every module has its own page in the MeadWorks menu (F8), and its settings are on that page.
 
-Version 1.0.3. Back up your worlds and characters before adding any mods, and report problems in Issues.
+Version 1.0.4. Back up your worlds and characters before adding any mods, and report problems in Issues.
 
 ![HUD](assets/Core/01-hud-56px.png)
 

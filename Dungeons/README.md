@@ -1,6 +1,6 @@
 # MeadWorks Dungeons
 
-Burial chambers, sunken crypts, infested mines, and Winding Tunnels reset to larger layouts. Loot chests refill and creatures return at other eligible locations after configurable delays. Configure the module on the Dungeons page of the MeadWorks menu (F8). Needs Meadworks: Core at exactly the same version.
+Burial chambers, sunken crypts, frost caves, infested mines, Winding Tunnels, the Howling Cavern and the Smouldering Tomb are built larger and reset to new layouts. Loot chests refill and creatures return at other eligible locations after configurable delays. Configure the module on the Dungeons page of the MeadWorks menu (F8). Needs Meadworks: Core at exactly the same version.
 
 ![Refill and respawn settings](https://raw.githubusercontent.com/ExtraPotions/MeadWorks/main/assets/Dungeons/01-refill-respawn-settings.png)
 ![Loot chest](https://raw.githubusercontent.com/ExtraPotions/MeadWorks/main/assets/Dungeons/02-loot-chest.png)
@@ -12,13 +12,15 @@ Burial chambers, sunken crypts, infested mines, and Winding Tunnels reset to lar
 
 ### Dungeon layouts reset
 
-Black Forest burial chambers, Swamp sunken crypts, Mistlands infested mines, and the Deep North's Winding Tunnels keep their current layout until their first reset. Hover over the exterior entrance to see the remaining in-game days or hours. Resets replace the interior with a different, larger set of rooms drawn from the game's own room pool. The entrance, exit and any exterior gate stay in place.
+Black Forest burial chambers, Swamp sunken crypts, Mountain frost caves, Mistlands infested mines, the Deep North's Winding Tunnels, and Hildir's Howling Cavern and Smouldering Tomb are larger than the game builds them: more rooms, and more floors where the room set has stairs or drops. A burial chamber aims for about 36 rooms where the game stops near 21. A dungeon first built while MeadWorks is installed is larger from the first visit. One built earlier keeps its layout until its first reset. Hover over the exterior entrance to see the remaining in-game days or hours. Resets replace the interior with a different large set of rooms drawn from the game's own room pool. The entrance, exit and any exterior gate stay in place.
+
+Each layout stays inside the game's own dungeon box for its map zone and uses the game's own room placement, so the saved layout loads without MeadWorks. A first layout that dead-ends well short of its size is rebuilt once right away, while nobody is inside. The mini-boss of the Howling Cavern or the Smouldering Tomb comes back with each new layout. Its reward chest for Hildir drops once per dungeon, on the first kill in that world, and one per kill; the same holds for the Sealed Tower. A reward chest left on the floor keeps its dungeon from resetting until it is picked up.
 
 When the countdown ends, the interior waits while a player is inside, has reserved an entry, or disconnected inside and has yet to be seen outside. If the server could not identify the disconnected character, that hold lasts one full reset interval from the disconnect. Player-built pieces, graves, tamed creatures and loose items the game cannot yet despawn also hold a reset. A player who returns to a stale spawn with no dungeon room nearby is teleported to the entrance or their spawn point.
 
-Putting an item into a dungeon loot chest marks its contents even when layout resets are off. Equipment's first-open gear and gem bonuses count as generated loot. The next reset carries over all non-empty loot chests owned by the old layout if it predates enrollment, resets were turned off, or the server restarted since that layout was generated. Find carried inventories in ordinary wooden chests beside the new entrance. A reset waits if the source inventory cannot be verified or the replacement entrance room lacks space for the carry chests.
+Putting an item into a dungeon loot chest marks its contents even when layout resets are off. Equipment's first-open gear and gem bonuses count as generated loot. The next reset carries over all non-empty loot chests owned by the old layout if it predates enrollment, resets were turned off, or the server restarted since that layout was generated. Find carried inventories in ordinary wooden chests on the floor of the new entrance room. Carry chests that 1.0.3 left on that room's roof make their dungeon due at once, and the reset brings their contents down. A reset waits if the source inventory cannot be verified or the replacement entrance room lacks space for the carry chests.
 
-Reset layouts renew their loot and creatures together. The separate refill and respawn timers still apply at eligible camps, villages, and hand-built interiors such as troll caves, bear caves, and the Ashlands' Putrid Holes. Hildir's quest dungeons, boss lairs, and Mörkhalla keep their native layouts to preserve their special encounters. Turning layout resets off restores the ordinary timers in eligible generated dungeons.
+Reset layouts renew their loot and creatures together. The separate refill and respawn timers still apply at eligible camps, villages, and hand-built interiors: troll caves, bear caves, the Ashlands' Putrid Holes and the Tomb of Lord Reto have one fixed interior each and no room generator. The Sealed Tower stands in the overworld and already holds every room that fits. Boss lairs and Mörkhalla keep their native layouts. Turning layout resets off restores the ordinary timers in eligible generated dungeons.
 
 ### Reset all dungeons
 
@@ -46,7 +48,7 @@ Press F8 and open the Dungeons page. Every setting row has a hover tip describin
 
 | Name | Default | Default permission | What it does |
 | --- | --- | --- | --- |
-| Reset dungeon layouts | On | Admins | Eligible generated dungeons get a larger new layout after the wait once the interior is clear. |
+| Reset dungeon layouts | On | Admins | Eligible generated dungeons are built larger and get a new large layout after the wait once the interior is clear. |
 | Reset all dungeons | — | Admins | Marks eligible generated dungeons due and rebuilds them in turn after confirmation. |
 | Dungeon reset days | 10 | Admins | How many in-game days an eligible dungeon waits after enrollment or its last layout reset (1 to 30). |
 | Refill loot chests | On | Admins only | World loot chests refill after the wait; dungeon chests also wait until nobody is inside that same dungeon. |
@@ -61,8 +63,11 @@ MeadWorks syncs these settings from the server. The host or an authorized admin 
 
 ## Known limits
 
-- If the game cannot generate a valid, larger replacement within its own bounds, the dungeon keeps its layout and tries again at the next day check.
-- Frost caves keep their original layout: the game often leaves their required shrine rooms out, and the replacement rarely comes out larger.
+- A reset waits while a loot chest still holds extras on an old overflow page; they come back when a player loads that chest.
+- A reset never leaves a dungeon with fewer rooms than it has; when no layout that large is found, the dungeon keeps its layout and tries again at the next day check.
+- A reset tries up to four layouts. If none is valid and larger than the game's own, the dungeon keeps its layout and tries again at the next day check.
+- Size depends on where the entrance sits in its map zone: a dungeon near the zone edge has less room and can come out smaller than its goal.
+- Sunken crypts gain the least. Their rooms are 12 m wide and cannot stack, so one map zone holds about 20 of them; MeadWorks gives the game's own placement four times its steps and keeps the largest of four layouts.
 - If the server cannot verify a layout switch, the entrance shows “Reset paused.” The hold applies to that dungeon.
 - Old auto-destroy drops can retire with an unloaded layout if their saved age and loose-item state allow it. A loose drop holding an unloaded layout shows “Resets when empty.”
 - Only creatures that a location placed once come back. Spawners that already respawn on their own are not changed.
