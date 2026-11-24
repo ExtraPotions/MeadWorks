@@ -278,14 +278,16 @@ Wearing a pack and its rows need Inventory. Without Inventory the pack remains a
 Five cauldron foods give half of their total as eitr and a quarter each as health and stamina. Their totals, duration and regeneration follow Queens Jam for Honeyed Capcake, Carrot Soup for Glowcap Stew, Turnip Stew for Marsh Eitr Pudding, Eyescream for Rimeberry Wrap and Blood Pudding for Duskbread Platter. Misted Magecap Roll gives 28 health, 14 stamina and 85 eitr, with Mushroom Omelette's duration and regeneration.
 
 ### Special arrows
-Arrows are crafted 20 at a time and stack to 100.
+Arrows are crafted 20 at a time. The base stack size is 100. Inventory's default Stack multiplier of 2 raises it to 200, and per-item stack settings can set a different cap.
 
-| Arrow | Effect | Recipe |
-| --- | --- | --- |
-| Ember | Leaves a burning patch with a 2 m radius for 4 seconds. Creatures in it take Burning up to once per second. A creature hit also spreads fire to one enemy within 3 m. | Fire Arrow 20, plus the materials from the Fire Arrow recipe |
-| Thunder | Lightning damage that jumps to up to 2 more enemies within 6 m, each jump at 60% of the one before. | Frost Arrow 20, Wood 8, Feathers 2, Obsidian 1 |
-| Bramble | Roots the enemy it hits for 2 s and slows other enemies within 3 m to 60% speed for 3 s. | Poison Arrow 20, Wood 8, Feathers 2, Thistle 1 |
-| Whistling | 8 pierce damage and eight times the stagger. It wakes non-tame creatures within 15 m and draws them to where it lands. | Flint Arrow 20, Wood 8, Feathers 2, Bone Fragments 1 |
+Overlapping patches deal one pulse per second of each kind to a creature inside. Ember and Bramble can both affect the same creature.
+
+| Arrow | Forge | Effect | Recipe |
+| --- | --- | --- | --- |
+| Ember | 1 | Bronze Arrow pierce with fire. Leaves a 3 m burning patch for 5 s. It deals 25% of the shot's fire damage per second to creatures in the patch. On a creature hit, fire also spreads to one nearby enemy within 3 m. | Fire Arrow 20, Wood 8, Feathers 2, Resin 4, Surtling Core 1 |
+| Bramble | 2 | Iron Arrow pierce. Roots the target for 3 s and leaves a 4 m thorn patch for 5 s. Enemies inside move at half speed and bleed 3 pierce damage per second. | Poison Arrow 20, Ancient Bark 4, Feathers 2, Thistle 2, Guck 1 |
+| Thunder | 3 | Obsidian Arrow damage as lightning. Jumps to up to 3 more enemies within 8 m, each jump at 70% of the one before. Wet targets take 50% more total damage before armor, including the game's Wet lightning bonus. | Frost Arrow 20, Fine Wood 8, Feathers 2, Obsidian 2, Crystal 1 |
+| Whistling | 4 | Needle Arrow pierce and eight times the stagger. Draws nearby untamed creatures within 25 m to investigate the impact for 6 s. Marks the target for 8 s, increasing all damage it takes by 15%. | Flint Arrow 20, Fine Wood 8, Feathers 2, Bone Fragments 2, Linen Thread 1 |
 
 ### Trinkets
 Eight crafted trinkets, worn in a slot of their own, one quality each. With Inventory two different trinkets can be worn at once. All eight can carry Ring inscriptions.
