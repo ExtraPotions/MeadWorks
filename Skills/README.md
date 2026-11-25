@@ -48,6 +48,8 @@ With Show skill gains on, a skill that reaches a new level adds one row to the p
 ### Progressive powers
 Forsaken powers grow with your progress. For each boss defeated beyond the one that grants the power (any boss that grants a guardian power counts, Hildir's minibosses do not), the power lasts longer, its effects get stronger and its cooldown gets shorter. The percentages per boss are Advanced settings, and the Forsaken powers list on the Trophies tab shows the Effect, Duration and Cooldown bonus you have now. The powers that grant a resistance (Bonemass, Yagluth) or sailing control (Moder) grow only in duration and cooldown, because their effect has fixed steps.
 
+Casting an attuned power gives the timed effect with its progression bonuses. Mastery applies while the power is attuned. Switching off attunement during a cast leaves the timed effect running for its remaining duration.
+
 ### Inventory tabs
 Three tabs sit in the inventory's tab row. The Skills tabs in the inventory switch shows or hides all three.
 

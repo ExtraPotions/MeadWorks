@@ -18,19 +18,21 @@ Each layout stays inside the game's own dungeon box for its map zone and uses th
 
 When the countdown ends, the interior waits while a player is inside, has reserved an entry, or disconnected inside and has yet to be seen outside. If the server could not identify the disconnected character, that hold lasts one full reset interval from the disconnect. Player-built pieces, graves, tamed creatures and loose items the game cannot yet despawn also hold a reset. A player who returns to a stale spawn with no dungeon room nearby is teleported to the entrance or their spawn point.
 
-Putting an item into a dungeon loot chest marks its contents even when layout resets are off. Equipment's first-open gear and gem bonuses count as generated loot. The next reset carries over all non-empty loot chests owned by the old layout if it predates enrollment, resets were turned off, or the server restarted since that layout was generated. Find carried inventories in ordinary wooden chests on the floor of the new entrance room. Carry chests that 1.0.3 left on that room's roof make their dungeon due at once, and the reset brings their contents down. A reset waits if the source inventory cannot be verified or the replacement entrance room lacks space for the carry chests.
+Take your loot before the dungeon resets. The reset removes the old dungeon chests and any items left inside them. It places no new carry chests. Existing carry chests stay in place, subject to the rooftop limit below.
 
 Reset layouts renew their loot and creatures together. The separate refill and respawn timers still apply at eligible camps, villages, and hand-built interiors: troll caves, bear caves, the Ashlands' Putrid Holes and the Tomb of Lord Reto have one fixed interior each and no room generator. The Sealed Tower stands in the overworld and already holds every room that fits. Boss lairs and Mörkhalla keep their native layouts. Turning layout resets off restores the ordinary timers in eligible generated dungeons.
 
 ### Reset all dungeons
 
-With layout resets turned on, a solo player, host, or authorized server admin can choose **Reset all dungeons** and confirm the performance warning. The server marks every eligible generated dungeon in the current world due and rebuilds them one at a time. The usual safety holds still apply. Progress and the final reset and waiting counts are shown to the person who started it. Cancel lets the current reset finish and leaves the rest due for their ordinary checks.
+With layout resets turned on, a solo player, host, or authorized server admin can choose **Reset all dungeons** and confirm the performance warning. The server marks every eligible generated dungeon in the current world due and rebuilds them one at a time. The usual safety holds still apply. Progress and the final reset and waiting counts are shown to the person who started it. Cancel lets the current reset finish and leaves the rest due for their ordinary checks. If the person who started the reset loses admin access, the progress dialog still finishes.
 
 ### Chests refill
+Wooden weapons can appear in the chest's original loot. Refills draw from its usual table with those weapons removed.
+
 Loot chests the world placed in dungeons and camps fill again with their own loot after enough in-game day boundaries have passed since they were emptied. The count starts when the chest is emptied, also when the chest stays loaded and nobody opens it. Chests that players built, chests in use and chests that still hold items are never touched. Dungeon chests also wait while any player is inside that same dungeon, even in a distant room. Leaving does not restart the refill delay.
 Hover over an emptied loot chest to see how many in-game days or hours are left, or that it is ready to refill, while chest refills are on.
 Empty world loot chests remain in place while refills are on, including treasure chests that normally disappear when emptied. Turning refills off restores the game's normal empty-chest removal.
-With Equipment installed, each refill also uses its MeadWorks item chest chance once, through the same native loot fill.
+With Equipment installed, each refill has the usual chance to add a bonus item. Each chest cycles through its eligible bonus items before repeating.
 
 ### Camps and dungeons repopulate
 The creatures that the world placed at a location come back after the camp or room is next seen empty. The wait counts in-game day boundaries, and camps and dungeons have their own switch and their own number of days. Dungeon creatures also wait while any player is inside that same dungeon, even more than 20 m from the spawner. A creature comes back only when no player-built piece is nearby, no player is within 20 m, and the game's own spawn conditions pass. Outdoor camps keep the 20 m player guard.
@@ -63,6 +65,7 @@ MeadWorks syncs these settings from the server. The host or an authorized admin 
 
 ## Known limits
 
+- Carry chests that 1.0.3 left on an entrance roof can break when the dungeon resets. Their contents drop on the ground.
 - A reset waits while a loot chest still holds extras on an old overflow page; they come back when a player loads that chest.
 - Each reset picks a new random layout larger than the game's own. The number of rooms can vary from reset to reset.
 - A reset tries up to four layouts. If none is valid and larger than the game's own, the dungeon keeps its layout and tries again at the next day check.
@@ -79,7 +82,7 @@ MeadWorks syncs these settings from the server. The host or an authorized admin 
 
 ## Compatibility
 
-Reset rooms, entrances and carry chests use native game objects and the native save format, so the generated layout can load with MeadWorks removed. Carry items keep their original prefab and still need the mod that supplies them. A MeadWorks client on a plain server sees the native entrance text.
+Reset rooms, entrances and existing carry chests use native game objects and the native save format, so the generated layout can load with MeadWorks removed. Modded items in existing carry chests still need the mod that supplies them. A MeadWorks client on a plain server sees the native entrance text.
 
 When using MeadWorks inventory changes, loading chests or graves without MeadWorks cuts oversized stacks to native sizes and discards the excess. Keep those containers in a matching installation.
 

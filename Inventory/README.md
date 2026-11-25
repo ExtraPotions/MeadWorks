@@ -124,13 +124,19 @@ Press F8 and open the Inventory page. Every setting row has a hover tip describi
 | Mead 1 to Mead 5 | Alt+Z, Alt+X, Alt+C, None, None | Everyone | The keys that drink the mead in each Mead cell. Advanced. |
 | Ammo 1 to Ammo 5 | Alt+1, Alt+2, Alt+3, None, None | Everyone | The keys that ready the ammo in each Ammo cell. Advanced. |
 
+## Slot mod compatibility
+
+EquipmentAndQuickSlots, Extra Slots and AzuExtendedPlayerInventory control bag size and dedicated slots when installed. MeadWorks keeps their saved item positions. Contents from old MeadWorks backpack rows move into the bag when there is room.
+
 ## Known limits
 
+- If you remove MeadWorks while keeping Extra Slots, Extra Slots can add a copy of an oversized slot stack from its backup.
+- Loading without Extra Slots or EquipmentAndQuickSlots can drop slotted items on the ground. When you reinstall the slot mod, it can restore copies from its own backup. This can also happen on characters that have never used MeadWorks.
 - Restore Chest width to 3 and Chest height to 2, then open each enlarged chest before removing Inventory: what no longer fits drops at your feet. The native chest loader cannot read items in added columns.
 
 - Shared chests are on by default. They need the server and the players who use the chest to run the same chest protocol, which comes with the same MeadWorks version. This does not change who can join.
 - Switching Shared chests on while a server is running can share eligible chests that are already loaded once they are closed and every ready peer can share. A chest with an observed native take-all grant stays native until the world session ends.
-- The food, mead and ammo dedicated cells are on by default on the inventory screen. An empty PACK cell is hidden while Backpacks is Off. COINS and KEY RING stay on the equipment panel.
+- With the MeadWorks layout, the food, mead and ammo dedicated cells are on by default on the inventory screen. An empty PACK cell is hidden while Backpacks is Off. COINS and KEY RING stay on the equipment panel.
 - A worn pack cannot be taken off, replaced, dropped, moved to a chest or destroyed while the items in its rows have no room in the rest of the bag. Free the cells first.
 - A second utility item is not drawn on your character.
 - A worn pack adds up to three rows below the action bar. On the inventory screen the slots fit the available height, and past that the rows scroll.

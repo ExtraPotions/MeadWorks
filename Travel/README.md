@@ -23,24 +23,24 @@ The full map has a side panel, and the map fills the rest of the screen inside o
 - Map pin travel is off by default. Turn it on to give players **Go here** on visible pin cards. The trip checks the world’s portal rules, including boss fights that block portals, carried items and whether you are on a ship or cart. It uses the game’s teleport loading and floor checks.
 - With Map pin travel off and Cheats loaded, an eligible player can use the Cheats **Go here** action and then **Return** in the Cheats window’s Player tab. The return point lasts for the current world session.
 - The biome and the position under the pointer show over the map, with zoom buttons, a scale line and a strip that names the map's clicks and keys.
-- The game's own clicks and keys work as before.
+- Pin and portal names use Valheim’s text filter in the lists and in search. The game's own clicks and keys work as before.
 
 ### Fewer pins when zoomed out
 Your ordinary pins hide once the map is zoomed out past a point you set, so a map full of pins stays readable. Pins you have crossed off always stay. The pin you are placing, naming or picking from the list stays in sight.
 
 ### Pin clusters
-Pins that overlap on screen fold into one badge with their most common icon and a count, and their names hide. Zooming out merges more of them; zooming in splits them, and fully zoomed in every pin shows. Pointing at a badge lists its pins nearest first; pointing at a row brings that pin out with its name, clicking the badge keeps the list open and clicking a row zooms to that pin. Where the names of nearby pins would overlap, one name shows: the selected pin first, then your own pins, then the nearest.
+Pins that overlap on screen fold into one badge with their most common icon and a count, and their names hide. Zooming out merges more of them; zooming in splits them, and fully zoomed in every pin shows. A selected or focused badge turns gold. Pointing at a badge lists its pins nearest first; pointing at a row brings that pin out with its name, clicking the badge keeps the list open and clicking a row zooms to that pin. Where the names of nearby pins would overlap, one name shows: the selected pin first, then your own pins, then the nearest.
 
 ### Weather and clock
 A line under the minimap shows the day and time, with the name of the environment actually applied to the local player. Native Rain shows Rain rather than Clear. With World, it also shows the season, using a separate row when it would be wider than the minimap, and the next native or MeadWorks forecast such as `Next: Gentle Rain in 4:10`. The current weather name shows here only when a MeadWorks environment is not applied; World shows that weather and warnings in its panel to the left.
 
 ### Portals, boats and carts
-A portal you have been near shows its tag on the map and the minimap. A boat or cart you built, sailed or pulled shows where you left it, with the game's icon and its name. A label set on that vehicle is used when it has one. The mark updates when you leave the vehicle or it unloads, and it is removed if the vehicle is destroyed. These marks last for the current world and are not written into the map save. Transport markers, on the Travel page, turns them on or off.
+A portal you have been near shows its tag on the map and the minimap. Its marker updates when another player renames it. A boat or cart you built, sailed or pulled shows where you left it, with the game's icon and its name. A label set on that vehicle is used when it has one. The mark updates when you leave the vehicle or it unloads, and it is removed if the vehicle is destroyed. These marks last for the current world and are not written into the map save. Transport markers, on the Travel page, turns them on or off.
 
 Claimed beds you have seen get their own Owned bed pins. Travel remembers them with your character for that world and clears stale pins once it can confirm the bed was destroyed or changed owners.
 
 ### Ships and paved roads
-On board, the HUD can show ship speed and hull health. Ship propulsion and Ship steering both start at 1, the game's usual sail, paddle and rudder response. Logging out aboard a ship remembers your spot on its deck. When the ship can be found and loaded on your next login in that world, you return to that spot, even if it moved. Otherwise the game uses its normal login point.
+On board, the HUD can show ship speed and hull health. Ship propulsion and Ship steering both start at 1, the game's usual sail, paddle and rudder response. Logging out aboard a ship remembers your spot on its deck. When the ship can be found and loaded on your next login in that world, you return to that spot, even if it moved. If the ship is unavailable or you saved a newer logout point with Travel disabled, the game uses its normal login point.
 
 The Paved-road bonus (%) defaults to 10. Jog and run faster and use less running stamina while on paved ground. The bonus does not apply on floors, aboard ships, while swimming or in the air.
 
@@ -52,11 +52,11 @@ Step into a portal and the full map opens with a mark on each portal open to you
 - Close the map and nothing happens. Being moved away from the portal also closes it.
 - A portal has one of three access settings. Public, which a freshly built portal has, is open to all players. Private is for its owner alone, plus solo players, the host and admins. Admin is for admins alone.
 - A portal's owner is the account that built it, so every character on that account owns it. The server notes the owner when the portal is built.
-- A portal that already stood before the server first ran this version of Travel has no owner. It stays Public, and only a solo player, the host or an admin can change its access. Build it again to own it.
+- A portal that already stood before the server first ran this version of Travel has no owner. It stays Public. The account that built it can claim it by changing access while standing in it; otherwise only a solo player, the host or an admin can change its access.
 - The panel shows the access of the portal you are standing in. Its owner can switch it between Public and Private there, and an admin can choose any of the three for any portal.
 - While the map is open the list keeps itself current: a portal that someone closes, opens, builds, renames or removes shows up as it is within a few seconds.
 - A portal closed to you is left off the list, stays dark, and shows the game's no-access text when you step into it. Its hover text names the access setting when that is not Public.
-- In multiplayer the server or host keeps its own record of every portal's owner and access, and approves each trip and each access change from that record. Travel must be installed on the server for this. Without it there, portals behave as in the base game and you can still join.
+- In multiplayer the server or host keeps its own record of every portal's owner and access, and approves each trip and each access change from that record. An approved trip uses the portal you chose the destination from. Travel must be installed on the server for this. Without it there, portals behave as in the base game and you can still join.
 - When picking a destination, the departure respects wards around the source. In solo and for the listen host, a ward over the landing spot can also refuse the trip, even if that area is unloaded.
 - Portal travel, on the Travel page, chooses between Pick on map and the base game's Tag pairing, and in multiplayer the world uses the server value. When an admin keeps the setting at Admins and chooses Tag pairing, players use the game’s matching-tag portals and portal access modes are off.
 - The host or an admin can open Portal management with Manage on the Travel page to search the portal list, change access or assign a new owner by account ID.
