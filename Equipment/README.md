@@ -282,7 +282,7 @@ Wearing a pack and its rows need Inventory. Without Inventory the pack remains a
 Five cauldron foods give half of their total as eitr and a quarter each as health and stamina. Their totals, duration and regeneration follow Queens Jam for Honeyed Capcake, Carrot Soup for Glowcap Stew, Turnip Stew for Marsh Eitr Pudding, Eyescream for Rimeberry Wrap and Blood Pudding for Duskbread Platter. Misted Magecap Roll gives 28 health, 14 stamina and 85 eitr, with Mushroom Omelette's duration and regeneration.
 
 ### Special arrows
-Arrows are crafted 20 at a time. The base stack size is 100. Inventory's default Stack multiplier of 2 raises it to 200, and per-item stack settings can set a different cap.
+Arrows are crafted 20 at a time. The base stack size is 100. Inventory's default Stack multiplier of 2 raises it to 200, and per-item stack settings can set a different cap. The multiplier also scales custom arrow weight once.
 
 Overlapping patches deal one pulse per second of each kind to a creature inside. Ember and Bramble can both affect the same creature.
 

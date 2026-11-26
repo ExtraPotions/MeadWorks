@@ -14,7 +14,7 @@ A larger inventory, a new inventory screen, chests that several players can use,
 
 ### Carry more
 - **Inventory size.** Choose the height of your inventory: 4 to 8 rows of the game's 8 columns, the action bar included. The default is the game's 8 by 4. A smaller size is refused while an item is in a slot it would remove.
-- **Stack multiplier.** Multiplies how many of an item fit in one stack. It is 2 by default. Coins are fixed at 999 outside COINS and ignore this setting.
+- **Stack multiplier.** Multiplies how many of an item fit in one stack. It is 2 by default. MeadWorks trophies and foods stack like the game item they copy. Existing oversized stacks keep their item counts. Coins are fixed at 999 outside COINS and ignore this setting.
 - **Per-item stacks.** A file you write, `config/MeadWorks/inventory/stacks.json`, gives single items a stack size of their own, 1 to 9999, for example `[ { "item": "Wood", "stack": 200 } ]`. A listed item ignores the multiplier; weight still follows it. Coins, keys and items the game does not stack keep their own limits. The file is read at the next world start, and a server's table applies to everyone connected. To stop using the table, leave `[]` in the file.
 - **Base carry weight.** How much you can carry before worn gear and effects add to it, 100 to 1000. 300, the default, is the game's own value.
 - **Portals take all items.** Off by default. On, ore, metal and the other items the game keeps out of portals go through them, and the no-portal mark and tooltip line disappear.

@@ -136,7 +136,7 @@ Core loads a JSON object of text keys and translations from `config/MeadWorks/la
 
 Use the same suite version and matching MeadWorks modules on a MeadWorks server. Other installed mods do not prevent joining. MeadWorks clients can join servers without MeadWorks; only a missing, wrong-version or mismatched MeadWorks install on a MeadWorks server is refused.
 
-With EquipmentAndQuickSlots, Extra Slots or AzuExtendedPlayerInventory installed, Core saves items in the slot mod's own cells. Items from old MeadWorks backpack rows return to the bag when there is room. See the limits below before changing your mod list.
+With EquipmentAndQuickSlots, Extra Slots or AzuExtendedPlayerInventory installed, Core saves items in the slot mod's own cells. Items from old MeadWorks backpack rows return to the bag when there is room. Picked-up gear that lands in a slot claimed by a worn item moves to the bag when space is available. See the limits below before changing your mod list.
 
 ## Known limits
 
